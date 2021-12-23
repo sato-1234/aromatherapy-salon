@@ -1,0 +1,748 @@
+@charset "utf-8";
+/*	------------------------------------------------
+全体共通：1920以上
+------------------------------------------------	*/
+@media screen and (min-width: 1921px) {
+	.contents {
+		width: 1920px;
+		margin: 0 auto;
+		position: relative;
+	}
+}
+
+/*	------------------------------------------------
+共通head用
+------------------------------------------------	*/
+/*	一番上下層ページ	*/
+.headerUnder {
+	border-top: 4px solid #58330d;
+	background: #fff;
+}
+.headerUnder > h1 {
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	font-size: 2.6rem;
+}
+
+/*	nav	*/
+.headerNav {
+	background: #573312;
+}
+.navButton {
+	display: none;
+}
+.headerNav > ul {
+	width: 995px;
+	margin: 0 auto;
+}
+.headerNav > ul > li {
+	position: relative;
+	float: left;
+	width: 141px;
+	height: 60px;
+	border-right: 1px solid #795c41;
+}
+.headerNav > ul > li:first-of-type {
+	border-left: 1px solid #795c41;
+}
+.headerNav > ul > li > a {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-45%);
+	font-weight: 500;
+	text-align: center;
+	font-size: 1.4rem;
+	color: #fff;
+	width: 141px;
+	line-height: 16px;
+	display: block;
+}
+.headerNav > ul > li > a > span {
+	display: block;
+	font-size: 1.0rem;
+	color: #b9a28a;
+}
+@media screen and (min-width: 1152px) {
+	.headerNav > ul.js-hoverCss > li > a {
+		transition-property: opacity;
+		transition-duration: 0.4s;
+	}
+	.headerNav > ul.js-hoverCss > li > a:hover {
+		opacity: 0.6;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.header {
+		position: relative;
+		overflow: hidden;
+	}
+
+	/*	一番上下層ページ	*/
+	.headerUnder {
+		position: fixed;
+		z-index: 97;
+		width: 100%;
+		box-shadow: 0 0 15px 5px rgba(0,0,0,0.1);
+	}
+	.headerUnder > h1 {
+		font-size: 2.0rem;
+		height: 60px;
+		line-height: 60px;
+	}
+
+	/*	nav	*/
+	.navButton {
+		display: inline-block;
+		cursor: pointer;
+		position: fixed;
+		z-index: 98;
+		top: 4px;
+		right: 0;
+		width: 60px;
+		height: 60px;
+	}
+
+	span.js-topCss {
+		position: absolute;
+		top: 55px;
+		right: 0;
+	}
+	span.js-Scroll {
+		position: fixed;
+		top: 0;
+	}
+
+	.navButton > span,
+	.navButton::before,
+	.navButton::after {
+		position: absolute;
+		top: 50%;
+		left: 21px; /* Safari用 */
+		transform: translateY(-50%);
+		width: 18px;
+		height: 3px;
+		border-radius: 3px;
+		background: #000;
+	}
+	.navButton::before {
+		top: calc(50% - 6px);
+		display: inline-block;
+		content: "";
+	}
+	.navButton::after {
+		top: calc(50% + 6px);
+		display: inline-block;
+		content: "";
+	}
+	.headerNav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		transform: translate(400px);
+		transition: transform 0.5s;
+		z-index: 99;
+		background: #000;
+		width: 400px;
+		height: 100vh;
+	}
+	nav.js-navOpen {
+		transform: translate(0);
+	}
+	.headerNav > ul {
+		width: auto;
+		margin: 0;
+	}
+	.headerNav > ul > li {
+		float: none;
+		width: auto;
+		border-right: none;
+	}
+	.headerNav > ul > li:first-of-type {
+		border-left: none;
+	}
+	.headerNav > ul > li > a {
+		position: unset;
+		text-align: left;
+		font-size: 1.3rem;
+		width: auto;
+		height: 57px;
+		line-height: 57px;
+		padding: 0 20px;
+		transform: none;
+	}
+	.headerNav > ul > li > a > span {
+		display: inline-block;
+		margin-left: 5px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1151px) {
+	.headerNav > ul.js-hoverCss > li > a {
+		transition-property: background-color, color;
+		transition-duration: 0.4s;
+	}
+	.headerNav > ul.js-hoverCss > li > a:hover {
+		color: #f4f4f4;
+		background-color: #3d2000;
+	}
+}
+@media screen and (max-width: 750px) {
+	.headerNav {
+		width: 250px;
+	}
+}
+@media screen and (max-width: 369px) {
+	.headerUnder > h1 {
+		text-align: left;
+		padding-left: 20px;
+	}
+}
+
+
+/*	SNS	*/
+aside.sns {
+	position: relative;
+	width: 988px;
+	margin: 0 auto;
+}
+aside.sns > ul {
+	position: absolute;
+	z-index: 1;
+	padding: 5px 0;
+	right: 0;
+	top: -123px;
+}
+aside.sns > ul > li {
+	float: left;
+	margin: 0 10px;
+}
+aside.sns > ul > li.line > a > i {
+	font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+	aside.sns > ul.js-hoverCss > li > a {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	aside.sns > ul.js-hoverCss > li > a:hover {
+		color: #795c41;
+	}
+}
+@media screen and (max-width: 1151px) {
+	aside.sns {
+		display: none;
+	}
+}
+
+/*	------------------------------------------------
+下層 UnderImg(ヘッダー画像)
+------------------------------------------------	*/
+
+.UnderImg {
+	width: 100%;
+	height: 430px;
+	overflow: hidden;
+	position: relative;
+}
+.UnderImg::before {
+	width: 100%;
+	height: 430px;
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+.UnderImg > img {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: calc(50% - 960px);
+	width: 1920px;
+	height: 430px;
+}
+
+.UnderImg > h2 {
+	position: absolute;
+	top: 50%; /* Safari用 */
+	transform: translateY(-50%);
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: 500;
+}
+.UnderImg > h2 > span:first-of-type {
+	font-size: 3.8rem;
+	display: block;
+	letter-spacing: 1px;
+}
+.UnderImg > h2 > span:last-of-type {
+	padding-top: 13px;
+	font-size: 1.8rem;
+}
+
+.UnderImg > .UnderImgDiv {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	background: rgba(255,255,255,0.2);
+}
+.UnderImg > .UnderImgDiv > ul {
+	width: 995px;
+	height: 60px;
+	margin: 0 auto;
+}
+.UnderImg > .UnderImgDiv > ul > li {
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	font-size: 1.4rem;
+	color: #fff;
+}
+.UnderImg > .UnderImgDiv > ul > li > a {
+	color: #fff;
+}
+.UnderImg > .UnderImgDiv > ul > li::before {
+	font-family: "design_plus";
+	content: "＞";
+	font-size: 1.2rem;
+	color: #fff;
+	display: inline-block;
+	padding: 0 13px;
+}
+.UnderImg > .UnderImgDiv > ul > li:first-of-type::before {
+	display: none;
+}
+.UnderImg > .UnderImgDiv > ul > li:first-of-type a::before {
+	content: "\f015";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+	.UnderImg > .UnderImgDiv > ul.js-hoverCss > li > a {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	.UnderImg > .UnderImgDiv > ul.js-hoverCss > li > a:hover {
+		color: #795c41;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.UnderImg {
+		padding-top: 64px;
+	}
+	.UnderImg::before {
+		top: 64px;
+	}
+	.UnderImg > img {
+		top: 64px;
+	}
+	.UnderImg > h2 {
+		top: calc(50% + 32px);
+	}
+
+	.UnderImg > .UnderImgDiv {
+		height: 44px;
+	}
+	.UnderImg > .UnderImgDiv ul {
+		width: auto;
+		padding: 0 30px;
+		height: 44px;
+		margin: 0;
+	}
+	.UnderImg > .UnderImgDiv > ul > li {
+		height: 44px;
+		line-height: 44px;
+		font-size: 1.2rem;
+	}
+}
+@media screen and (max-width: 950px) {
+	.UnderImg {
+		height: 350px;
+	}
+	.UnderImg::before {
+		height: 350px;
+	}
+	.UnderImg > img {
+		left: calc(50% - 781px);
+		width: 1562px;
+		height: 350px;
+	}
+}
+@media screen and (max-width: 750px) {
+	.UnderImg {
+		height: 200px;
+	}
+	.UnderImg::before {
+		height: 200px;
+	}
+	.UnderImg > img {
+		left: calc(50% - 446px);
+		width: 892px;
+		height: 200px;
+	}
+	.UnderImg > h2 > span:first-of-type {
+		font-size: 2.2rem;
+	}
+	.UnderImg > h2 > span:last-of-type {
+		padding-top: 13px;
+		font-size: 1.2rem;
+	}
+
+	.UnderImg > .UnderImgDiv > ul {
+		padding: 0 20px;
+	}
+}
+
+/*	------------------------------------------------
+先頭に戻るボタン .returnTop(共通)
+------------------------------------------------	*/
+.returnTop {
+	background: #fff;
+	border-top: 1px solid #ddd;
+}
+.returnTop > a {
+	width: 100%;
+	height: 58px;
+	line-height: 58px;
+	display: block;
+	text-align: center;
+}
+.returnTop > a > span::before {
+	content: "\f077";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: #333;
+}
+
+@media screen and (min-width: 768px) {
+	.returnTop > a.js-hoverCss {
+		transition-property: background-color;
+		transition-duration: 0.4s;
+	}
+	.returnTop > a.js-hoverCss:hover {
+		background-color: #e5e5e5;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.returnTop > a {
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+/*	------------------------------------------------
+footerの上 .footerPrev(共通footerの上)
+------------------------------------------------	*/
+.footerPrev > li {
+	overflow: hidden;
+	width: calc(100% / 3);
+	float: left;
+}
+.footerPrev > li > a {
+	background: rgba(0,0,0,5);
+	display: block;
+	position: relative;
+}
+.footerPrev > li > a > img {
+	width: calc(100% + 15px);
+	height: auto;
+	position: relative;
+	top: 0;
+	right: 15px;
+}
+.footerPrev > li > a > .img2 {
+	display: none;
+}
+.footerPrev > li > a > span {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 2.2rem;
+	color: #fff;
+	background: rgba(52,30,9,0.5);
+}
+
+.footer > .footerDiv > a {
+	display: block;
+	margin: 35px auto 0;
+	color: #58330c;
+	background: #fff;
+	text-align: center;
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+	border: 1px solid #59340e;
+}
+
+
+@media screen and (min-width: 768px) {
+	.footerPrev > li > a.js-hoverCss::before {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		transition-property: background-color;
+		transition-duration: 0.4s;
+	}
+	.footerPrev > li > a.js-hoverCss > img {
+		transition-property: right;
+		transition-duration: 0.4s;
+	}
+
+	.footer > .footerDiv > a.js-hoverCss {
+		transition-property: background-color, color;
+		transition-duration: 0.4s;
+	}
+	.footerPrev > li > a.js-hoverCss:hover::before {
+		background-color: rgba(0,0,0,0.3);
+	}
+	.footerPrev > li > a.js-hoverCss:hover > img {
+		right: 0;
+	}
+
+	.footer > .footerDiv > a.js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.footer > .footerDiv > a {
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4rem;
+	}
+}
+@media screen and (max-width: 750px) {
+	.js-safari .footerPrev > li:first-of-type {
+		padding-left: 0;
+	}
+	.js-safari .footerPrev > li:last-of-type {
+		padding-right: 0;
+	}
+	.footerPrev > li {
+		width: 100%;
+		height: 250px;
+		float: none;
+	}
+	.footerPrev > li > a {
+		height: 250px;
+	}
+	.footerPrev > li > a > img {
+		display: none;
+		width: 770px;
+		height: 250px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: calc(50% - 385px);
+	}
+	.footerPrev > li > a > .img2 {
+		display: inline-block;
+	}
+	.footerPrev > li > a > span {
+		font-size: 2.0rem;
+	}
+}
+@media screen and (max-width: 590px) {
+	.footerPrev > li {
+		height: 222px;
+	}
+	.footerPrev > li > a {
+		height: 222px;
+	}
+	.footerPrev > li > a > img {
+		width: 684px;
+		height: 222px;
+		right: calc(50% - 342px);
+	}
+}
+
+/*	------------------------------------------------
+.footer (共通footer)
+------------------------------------------------	*/
+.footer > .footerDiv {
+	background: #f4f0ec;
+	padding: 60px 0;
+}
+
+.footer > .footerDiv > div:first-of-type {
+	text-align: center;
+}
+.footer > .footerDiv > div:first-of-type > a > span{
+	font-size: 2.6rem;
+}
+
+.footer > .footerDiv > address {
+	padding: 35px 0;
+	text-align: center;
+	font-size: 1.6rem;
+}
+.footer > .footerDiv > address > span:first-of-type {
+	display: block;
+	padding-bottom: 15px;
+}
+.footer > .footerDiv > address > span:first-of-type > span {
+	padding-left: 15px;
+}
+
+.footerLink {
+	padding: 0 0 20px;
+	text-align: center;
+}
+.footerLink > a {
+	width: 330px;
+}
+
+.footer > .footerDiv > ul {
+	display: flex;
+	-webkit-box-orient: horizontal; /* 水平 */ /* 左順番 */
+	flex-wrap: nowrap;
+	justify-content: center; /* センター */
+}
+.footer > .footerDiv > ul > li {
+	margin: 0 10px;
+}
+.footer > .footerDiv > ul > li.line > a > i {
+	font-size: 1.8rem;
+}
+@media screen and (min-width: 768px) {
+	.footer > .footerDiv > ul.js-hoverCss > li > a {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	.footer > .footerDiv > ul.js-hoverCss > li > a:hover {
+		color: #795c41;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.footer > .footerDiv > div:first-of-type > a > span {
+		font-size: 2.2rem;
+	}
+}
+@media screen and (max-width: 750px) {
+	.footer > .footerDiv > address {
+		font-size: 1.4rem;
+	}
+}
+@media screen and (max-width: 590px) {
+	.footer > .footerDiv > div:first-of-type > a > span {
+		font-size: 2.0rem;
+	}
+	.footer > .footerDiv > address > span:first-of-type > span {
+		padding: 15px 0 0;
+		display: block;
+	}
+	.footerLink > a {
+		width: 252px;
+	}
+}
+
+.footer > .footerP {
+	text-align: center;
+	font-size: 1.4rem;
+	height: 60px;
+	line-height: 60px;
+	border-top: 1px solid #ddd;
+}
+
+.footer > ul {
+	display: flex;
+	-webkit-box-orient: horizontal; /* 水平 */ /* 左順番 */
+	flex-wrap: nowrap;
+	justify-content: center; /* センター */
+	padding: 23px 0;
+	height: 14px;
+	border-top: 1px solid #ddd;
+}
+.footer > ul > li {
+	padding: 0 12px;
+	border-right: 1px solid #aaa;
+}
+.footer > ul > li:last-of-type {
+	border-right: none;
+}
+.footer > ul > li > a {
+	font-size: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+	.footer > ul.js-hoverCss > li > a {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	.footer > ul.js-hoverCss > li > a:hover {
+		color: #795c41;
+	}
+}
+@media screen and (max-width: 750px) {
+	.footer > .footerP {
+		padding: 16px 30px 13px;
+		font-size: 1.2rem;
+		height: auto;
+		line-height: 2;
+	}
+	.footer > ul {
+		flex-wrap: wrap;
+		padding: 16px 30px 13px;
+		height: auto;
+		line-height: 2;
+	}
+	.footer > ul > li {
+		padding: 0;
+		border-right: none;
+	}
+	.footer > ul > li > a {
+		line-height: 1;
+		padding: 0 12px;
+		border-right: 1px solid #aaa;
+		font-size: 1.2rem;
+	}
+	.footer > ul > li:last-of-type > a {
+		border-right: none;
+	}
+}
+
+.footer > .footerSmall {
+	text-align: center;
+	background: #573312;
+	line-height: 60px;
+	height: 60px;
+	font-size: 1.2rem;
+	color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+	.footer > .footerSmall {
+		line-height: 50px;
+		height: 50px;
+	}
+}
+@media screen and (max-width: 349px) {
+	.footer > .footerSmall {
+		font-size: 1.0rem;
+	}
+}

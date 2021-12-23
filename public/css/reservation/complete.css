@@ -1,0 +1,99 @@
+@charset "utf-8";
+/*	------------------------------------------------
+予約ページの完了ページ（　/reservation/complete　）
+------------------------------------------------	*/
+.reservationCompletePadding {
+	padding: 60px 0;
+	background: #f4f0ec;
+}
+.reservationCompleteDivs {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 60px;
+	box-sizing: border-box;
+	width: 995px;
+	margin: 0 auto;
+}
+
+.reservationCompleteP {
+	padding: 0 0 30px;
+	line-height: 1.7;
+}
+.reservationCompleteP > span:first-of-type {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 15px;
+	font-size: 1.8rem;
+	color: #655;
+	font-weight: bold;
+}
+.reservationCompleteP > span:first-of-type > span {
+	color: #f6c;
+	display: block;
+}
+
+.reservationCompleteDiv {
+	text-align: center;
+}
+.reservationCompleteDiv > a {
+	display: block;
+	color: #655;
+	line-height: 1.7;
+}
+.reservationCompleteDiv > a:last-of-type {
+	background: #fff;
+	margin: 30px auto 0;
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+	.reservationCompleteDiv > a.js-hoverCss {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.reservationCompleteDiv > a.js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+@media screen and (max-width: 1151px) {
+	.reservationCompletePadding {
+		padding: 114px 40px 50px;
+	}
+	.reservationCompleteDivs {
+		padding: 50px 40px;
+		width: auto;
+	}
+}
+@media screen and (max-width: 750px) {
+	.reservationCompletePadding {
+		padding: 114px 20px 50px;
+	}
+	.reservationCompleteDivs {
+		padding: 45px 20px;
+	}
+	.reservationCompleteP {
+		font-size: 1.4rem;
+	}
+	.reservationCompleteP > span:first-of-type {
+		font-size: 1.6rem;
+	}
+	.reservationCompleteDiv > a:last-of-type {
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4rem;
+	}
+}
+@media screen and (max-width: 359px) {
+	.reservationCompleteP > span:first-of-type {
+		text-align: left;
+	}
+}

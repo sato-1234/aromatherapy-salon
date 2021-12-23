@@ -1,0 +1,16 @@
+/node_modules
+/public/hot
+/public/storage
+/public/favicons
+/storage/*.key
+/vendor
+*.DS_Store
+.env
+.env.backup
+composer.lock
+package-lock.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log

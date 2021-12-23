@@ -1,0 +1,282 @@
+@charset "utf-8";
+/*	------------------------------------------------
+MENUページ（/menu）
+------------------------------------------------	*/
+.menuBox {
+	background: #f4f0ec;
+}
+
+.menuBox2 {
+	width: 995px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+.menuBox3 {
+	padding-bottom: 60px;
+}
+.menuBox3 > h3 {
+	font-size: 38px;
+	color: #58330d;
+	line-height: 1.4;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.menuBox3 > p {
+	line-height: 2.5;
+	text-align: center;
+}
+
+.menuBox4 {
+	position: relative;
+	display: flex;
+	-webkit-box-orient: horizontal; /* 水平or垂直 */ /* 順番 */
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+.menuBox4::before {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 100%;
+	background: #ddd;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(50% - 0.5px);
+}
+
+.menuBox4 > li {
+	width: 50%;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+.menuBox4 > li:nth-of-type(odd) {
+	border-left: 1px solid #ddd;
+}
+.menuBox4 > li:nth-of-type(even) {
+	border-right: 1px solid #ddd;
+}
+.menuBox4 > li > a {
+	display: block;
+	height: 100%;
+}
+.menuBox4 > li > a > div {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+	z-index: 2;
+}
+.menuBox4 > li > a > div > img {
+	position: absolute;
+	z-index: 3;
+	width: 528px;
+	height: 100%;
+	top: 0;
+	right: calc(50% - 264px);
+}
+.menuBox4 > li > a > div > h4 {
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	height: 100px;
+	padding: 20px;
+	box-sizing: border-box;
+	background: rgba(52,30,9,0.5);
+	bottom: 0;
+	left: 0;
+	color: #fff;
+}
+.menuBox4 > li > a > div > h4 > span:first-of-type {
+	display: block;
+	text-align: center;
+	font-size: 2.8rem;
+	padding-bottom: 15px;
+	letter-spacing: 1px;
+}
+.menuBox4 > li > a > div > h4 > span:last-of-type {
+	display: block;
+	text-align: center;
+}
+.menuBox4 > li > a > div::after {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+}
+.menuBox4 > li > a > p {
+	line-height: 2.4;
+	padding: 40px 60px;
+}
+
+@media screen and (min-width: 768px) {
+	.menuBox4 > li.js-hoverCss > a > div::after {
+		transition-property: background-color;
+		transition-duration: 0.4s;
+	}
+	.menuBox4 > li.js-hoverCss > a > div > img {
+		transition-property: right;
+		transition-duration: 0.4s;
+	}
+	.menuBox4 > li.js-hoverCss > a > p {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	.menuBox4 > li.js-hoverCss > a:hover > div::after {
+		background-color: rgba(0,0,0,0.3);
+	}
+	.menuBox4 > li.js-hoverCss > a:hover > div > img {
+		right: calc(50% - 279px);
+	}
+	.menuBox4 > li.js-hoverCss > a:hover > p {
+		color: #997551;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1151px) {
+	.menuBox4 > li.js-hoverCss > a:hover > div > img {
+		right: calc(50% - 297.75px);
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 1076px) {
+	.menuBox4 > li.js-hoverCss > a:hover > div > img {
+		right: calc(50% - 279px);
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 950px) {
+	.menuBox4 > li.js-hoverCss > a:hover > div > img {
+		right: calc(50% - 225px);
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 920px) {
+	.menuBox4 > li.js-hoverCss > a:hover > div > img {
+		right: calc(50% - 235px);
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.menuBox2 {
+		width: auto;
+		padding: 60px 40px;
+	}
+	.menuBox3 {
+		padding-bottom: 50px;
+	}
+	.menuBox4 > li > a > div > img {
+		width: 565.5px;
+		height: 321px;
+		top: calc(50% - 160.5px);
+		right: calc(50% - 282.75px);
+	}
+}
+@media screen and (max-width: 1076px) {
+	.menuBox4 > li > a > div > img {
+		width: 528px;
+		height: 100%;
+		top: 0;
+		right: calc(50% - 264px);
+	}
+}
+@media screen and (max-width: 950px) {
+	.menuBox4 > li > a > div {
+		height: 250px;
+	}
+	.menuBox4 > li > a > div > img {
+		width: 440px;
+		right: calc(50% - 220px);
+	}
+	.menuBox4 > li > a > p {
+		padding: 20px 30px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.menuBox3 > h3 > span {
+		display: block;
+	}
+	.menuBox3 > p {
+		text-align: left;
+	}
+	.menuBox3 > p br {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.menuBox2 {
+		padding: 40px 20px 50px 20px;
+	}
+	.menuBox3 {
+		padding-bottom: 40px;
+	}
+	.menuBox3 > h3 {
+		font-size: 2.0rem;
+		line-height: 1.4;
+		padding-bottom: 10px;
+	}
+	.menuBox3 > p {
+		font-size: 1.4rem;
+		line-height: 2.3;
+	}
+
+	.menuBox4 {
+		display: block;
+	}
+	.menuBox4::before {
+		display: none;
+	}
+	.menuBox4 > li {
+		width: 100%;
+	}
+	.menuBox4 > li:nth-of-type(odd) {
+		border-right: 1px solid #ddd;
+	}
+	.menuBox4 > li:nth-of-type(even) {
+		border-left: 1px solid #ddd;
+	}
+	.menuBox4 > li > a > div {
+		height: 190px;
+	}
+	.menuBox4 > li > a > div > img {
+		width: 708px;
+		height: 402px;
+		right: calc(50% - 354px);
+		top: calc(50% - 201px);
+	}
+	.menuBox4 > li > a > div > h4 {
+		height: 65px;
+		padding: 13px;
+	}
+	.menuBox4 > li > a > div > h4 > span:first-of-type {
+		font-size: 2.2rem;
+		padding-bottom: 5px;
+	}
+	.menuBox4 > li > a > div > h4 > span:last-of-type {
+		font-size: 1.2rem;
+	}
+	.menuBox4 > li > a > p {
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.menuBox4 > li > a > div > img {
+		width: 394px;
+		height: 222px;
+		right: calc(50% - 197px);
+		top: calc(50% - 111px);
+	}
+}
+@media screen and (max-width: 390px) {
+	.menuBox4 > li > a > div > img {
+		width: 334px;
+		height: 190px;
+		right: calc(50% - 167px);
+		top: 0;
+	}
+}

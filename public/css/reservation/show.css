@@ -1,0 +1,692 @@
+@charset "utf-8";
+/*	------------------------------------------------
+予約ページ（/reservation）
+------------------------------------------------	*/
+.reservationBox {
+	background: #f4f0ec;
+	padding: 100px 0;
+}
+
+/*	ご予約前に	*/
+.boxFirst {
+	width: 995px;
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 80px 100px;
+	box-sizing: border-box;
+	margin: 0 auto 100px;
+}
+.boxFirst > h3 {
+	text-align: center;
+	font-size: 38px;
+	color: #58330d;
+	padding-bottom: 30px;
+}
+
+.boxFirstTel {
+	text-align: center;
+	color: #593300;
+}
+.boxFirstTelTwo {
+	padding-top: 30px;
+}
+.boxFirstTel > span {
+	font-size: 1.6rem;
+}
+.boxFirstTel > a {
+	font-size: 3.8rem;
+	color: #593300;
+}
+.boxParking {
+	text-align: center;
+}
+.boxParking > span {
+	display: block;
+	padding: 50px 0;
+}
+.boxParking > button {
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+	.boxParking > button.js-hoverCss {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.boxParking > button.js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+
+.parkingBox {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+}
+div.js-parkingOpen {
+	display: block;
+}
+.parkingBox > div {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	z-index: 101;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+.parkingBox > img {
+	width: 510px;
+}
+.parkingBox > span {
+	position: absolute;
+	z-index: 102;
+	top: 40px;
+	right: 40px;
+	width: 40px;
+	height: 40px;
+}
+.parkingBox > span::before,
+.parkingBox > span::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	width: 40px;
+	height: 3px;
+	background: #fff;
+}
+.parkingBox > span::before {
+	left: 7px;
+	transform-origin: top left;
+	transform: rotate(45deg);
+}
+.parkingBox > span::after {
+	right: 7px;
+	transform-origin: top right;
+	transform: rotate(-45deg);
+}
+
+.boxFirstInner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.boxFirstInner > .boxFirstSection {
+	position: relative;
+	width: 48%;
+	margin-top: 60px;
+	padding: 60px 20px;
+	border: 1px solid #5b3401;
+	box-sizing: border-box;
+}
+.boxFirstInner > .boxFirstSection:first-child {
+	width: 100%;
+	margin-top: 40px;
+}
+.boxFirstSection > h4 {
+	position: absolute;
+	top: -1.3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block;
+	padding: 0 1rem;
+	color: #5b3401;
+	background-color: #fff;
+	font-size: 2.0rem;
+	word-break: keep-all;
+}
+
+.boxFirstInner > .boxFirstSection:first-child > h4 {
+	font-size: 2.6rem;
+}
+.boxFirstInner > .boxFirstSection:first-child > p {
+	text-align: center;
+	font-size: 1.6rem;
+	line-height: 2.5;
+	padding-bottom: 30px;
+}
+.boxFirstInner > .boxFirstSection:first-child > p > span {
+	font-size: 1.4rem;
+	color: #666;
+}
+
+.boxFirstSection > .linkSquare {
+	display: block;
+	margin: 0 auto;
+	color: #fff;
+	background: #58330c;
+	text-align: center;
+	width: 250px;
+	line-height: 60px;
+	border: 1px solid #59340e;
+	box-sizing: border-box;
+}
+
+.boxFirstSection > .linkBnr {
+	display: block;
+	margin: 0 auto;
+	width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+	.boxFirstSection > .linkSquare {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.boxFirstSection > .linkSquare:hover {
+		color: #58330c;
+		background-color: #fff;
+	}
+	.boxFirstSection > .linkBnr {
+		transition-property: opacity;
+		transition-duration: 0.4s;
+	}
+	.boxFirstSection > .linkBnr:hover {
+		opacity: 0.8;
+	}
+}
+
+
+@media screen and (max-width: 1151px) {
+	.reservationBox {
+		padding: 60px 40px;
+	}
+	/*	ご予約前に	*/
+	.boxFirst {
+		width: auto;
+		padding: 60px;
+		margin: 0 auto 60px;
+	}
+}
+@media screen and (max-width: 950px) {
+	.reservationBox {
+		padding: 60px 40px;
+	}
+	/*	ご予約前に	*/
+	.boxFirstInner > .boxFirstSection:first-child > p {
+		text-align: left;
+	}
+	.boxFirstTel {
+		text-align: left;
+	}
+	.boxParking > span {
+		text-align: left;
+	}
+}
+@media screen and (max-width: 750px) {
+	.reservationBox {
+		padding: 35px 20px 50px;
+	}
+	/*	ご予約前に	*/
+	.boxFirst {
+		margin: 0 auto 50px;
+		padding: 30px;
+	}
+	.boxFirst > h3 {
+		font-size: 2rem;
+	}
+	.boxFirstInner > .boxFirstSection:first-child > p  {
+		font-size: 1.4rem;
+	}
+	.boxFirstTel > span {
+		font-size: 1.4rem;
+	}
+	.boxFirstTel > a {
+		font-size: 2rem;
+	}
+	.boxParking > span {
+		font-size: 1.4rem;
+		line-height: 2.5;
+		padding: 50px 0 20px;
+	}
+	.boxParking > button {
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		padding: 0;
+		font-size: 1.4rem;
+	}
+
+	.boxFirstInner > .boxFirstSection {
+		width: 100%;
+		margin-top: 40px;
+		padding: 40px 20px;
+	}
+	.boxFirstInner > .boxFirstSection:first-child {
+		margin-top: 20px;
+	}
+	.boxFirstInner > .boxFirstSection:first-child h4,
+	.boxFirstSection h4 {
+		top: -0.8rem;
+		font-size: 1.6rem;
+	}
+	.boxFirstSection > .linkSquare,
+	.boxFirstSection > .linkBnr {
+		width: 80%;
+		max-width: 250px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.boxFirstInner > .boxFirstSection:first-child > p  > br {
+		display: none;
+	}
+	.boxFirstInner > .boxFirstSection:first-child > p  > span {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.parkingBox > img {
+		width: 280px;
+	}
+	.parkingBox > span {
+		top: 30px;
+		right: 30px;
+		width: 30px;
+		height: 30px;
+	}
+	.parkingBox > span::before,
+	.parkingBox > span::after {
+		width: 30px;
+		height: 2px;
+	}
+	.parkingBox > span::before {
+		left: 5px;
+	}
+	.parkingBox > span::after {
+		right: 5px;
+	}
+}
+@media screen and (max-width: 490px) {
+	.reservationBox {
+		padding: 0 0 50px;
+	}
+	.boxFirst {
+    border: none;
+	}
+}
+@media screen and (max-width: 400px) {
+	.boxFirstTel > span {
+		display: block;
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 359px) {
+	.boxFirstTel > a {
+		font-size: 1.6rem;
+	}
+}
+
+
+/*	キャンペーンと通常メニューの共通	*/
+.boxCommon {
+	width: 995px;
+	margin: 0 auto;
+}
+
+.boxCommon > h3 {
+	color: #593306;
+	padding-bottom: 50px;
+	text-align: center;
+	font-weight: 400;
+}
+.boxCommon > h3 > span:first-of-type {
+	font-size: 3.8rem;
+	letter-spacing: 2px;
+}
+.boxCommon > h3 > span:last-of-type {
+	font-size: 1.8rem;
+	display: block;
+	padding-top: 15px;
+}
+@media screen and (max-width: 1151px) {
+	.boxCommon {
+		width: auto;
+	}
+}
+@media screen and (max-width: 750px) {
+	.boxCommon > h3 > span:first-of-type {
+		font-size: 2.0rem;
+	}
+	.boxCommon > h3 > span:last-of-type {
+		font-size: 1.4rem;
+		padding-top: 10px;
+	}
+	.boxCommon > h3 {
+		padding-bottom: 30px;
+	}
+}
+
+
+/*	キャンペーン	*/
+.boxCommonOne {
+	padding-bottom: 100px;
+}
+.boxCommonOne > p {
+	font-size: 22px;
+	color: #fff;
+	background: #58330d;
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+}
+.boxCommonOne > ul > li {
+	height: 250px;
+	background-color: #fff;
+	display: flex;
+	-webkit-box-orient: horizontal; /* 水平or垂直 */ /* 順番 */
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.boxCommonOne > ul > li:nth-of-type(n + 2) {
+	border-top: 1px solid #ccc;
+}
+.boxCommonOne > ul > li > img {
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 300px;
+}
+.boxCommonOne > ul > li > div {
+	width: calc(100% - 300px);
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+
+.boxCommonOne > ul > li > div > h4 {
+	font-size: 1.8rem;
+	color: #98605e;
+	line-height: 1.7;
+}
+.boxCommonOne > ul > li > div > p:nth-of-type(1) > span {
+	margin: 10px 15px 0 0;
+	padding: 5px;
+	background: #fcc;
+	color: #fff;
+	font-size: 1.2rem;
+}
+.boxCommonOne > ul > li > div > p:nth-of-type(2) {
+	padding: 10px 0;
+}
+.boxCommonOne > ul > li > div > p:nth-of-type(2) > span {
+	margin-right: 15px;
+	font-size: 1.6rem;
+}
+.boxCommonOne > ul > li > div > p:nth-of-type(2) > span > span {
+	color: #98605e;
+}
+.boxCommonOne > ul > li > div > p:nth-of-type(3) {
+	color: #666;
+	line-height: 1.7;
+	font-size: 1.4rem;
+}
+.boxCommonOne > ul > li > div > form {
+	padding-top: 10px;
+}
+.boxCommonOne > ul > li > div > form > input[type="number"] {
+	display: none;
+}
+.boxCommonOne > ul > li > div > form > input.new {
+	padding: 10px;
+	color: #58330c;
+	border: 1px solid #59340e;
+	margin: 0 10px 0 0;
+	cursor: pointer;
+}
+/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+.boxCommonOne > ul > li > div > form > input:last-of-type {
+	font-size: 1.2rem;
+	padding-bottom: 2px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+*/
+@media screen and (min-width: 768px) {
+	.boxCommonOne > ul > li > div > form.js-hoverCss > input.new {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonOne > ul li > div form.js-hoverCss input:last-of-type {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	*/
+	.boxCommonOne > ul > li > div > form.js-hoverCss > input.new:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonOne > ul li > div form.js-hoverCss input:last-of-type:hover {
+		color: #795c41;
+	}
+	*/
+}
+@media screen and (max-width: 1151px) {
+	.boxCommonOne {
+		padding-bottom: 60px;
+	}
+}
+@media screen and (max-width: 1020px) {
+	.boxCommonOne > ul > li {
+		height: auto;
+		display: block;
+	}
+	.boxCommonOne > ul > li > img {
+		display: block;
+		width: 400px;
+		margin: 0 auto;
+		padding-top: 20px;
+	}
+	.boxCommonOne > ul > li > div {
+		width: auto;
+		padding: 15px;
+	}
+	.boxCommonOne > ul > li > div > form {
+		text-align: center;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonOne > ul > li > div > form > input:last-of-type {
+		display: none;
+	}
+	*/
+}
+@media screen and (max-width: 750px) {
+	.boxCommonOne {
+		padding-bottom: 50px;
+	}
+	.boxCommonOne > p {
+		font-size: 1.6rem;
+		line-height: 50px;
+		height: 50px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.boxCommonOne > ul > li > img {
+		width: 300px;
+	}
+	.boxCommonOne > ul > li > div > p:nth-of-type(2) {
+		padding: 10px 0 5px;
+		line-height: 2;
+	}
+	.boxCommonOne > ul > li > div > p:nth-of-type(2) > span:last-of-type {
+		display: block;
+	}
+}
+@media screen and (max-width: 490px) {
+	.boxCommon {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.boxCommonOne > ul > li > img {
+		height: 250px;
+		width: 100%;
+		padding-top: 0;
+	}
+	.boxCommonOne > ul > li > div {
+		padding: 15px 15px 45px;
+	}
+	.boxCommonOne > ul > li:nth-of-type(n + 2) {
+		border-top: none;
+	}
+}
+
+/*	通常メニュー	*/
+
+.boxCommonTwo > table {
+	width: 100%;
+}
+
+.boxCommonTwo > table > tbody > tr > th {
+	font-size: 22px;
+	color: #fff;
+	background: #58330d;
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+}
+.boxCommonTwo > table > tbody > tr  > td {
+	border: 1px solid #ddd;
+	border-top: none;
+	background: #fff;
+	padding: 20px 0;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+
+.boxCommonTwo > table > tbody > tr > td:first-of-type {
+	width: 100px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) {
+	width: calc(100% - 280px);
+	vertical-align: middle;
+}
+.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) > p {
+	line-height: 1.7;
+	padding: 0 10px;
+}
+.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) > p > span:last-of-type {
+	font-size: 1.4rem;
+	color: #666;
+	display: block;
+}
+
+.boxCommonTwo > table > tbody > tr > td:last-of-type {
+	width: 180px;
+	vertical-align: middle;
+	text-align: center;
+}
+.boxCommonOne > table > tbody > tr > td:last-of-type > span {
+	color: #666;
+}
+.boxCommonTwo > table > tbody > tr > td:last-of-type > form > input[type="number"] {
+	display: none;
+}
+.boxCommonTwo > table > tbody > tr > td:last-of-type > form > input.new {
+	padding: 10px;
+	color: #58330c;
+	border: 1px solid #59340e;
+	margin: 10px 0;
+	cursor: pointer;
+}
+/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+.boxCommonTwo > table > tbody > tr > td:last-of-type > form > input:last-of-type {
+	font-size: 1.2rem;
+	padding-bottom: 2px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+*/
+@media screen and (min-width: 768px) {
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form.js-hoverCss > input.new {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form.js-hoverCss > input:last-of-type {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	*/
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form.js-hoverCss > input.new:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form.js-hoverCss > input:last-of-type:hover {
+		color: #795c41;
+	}
+	*/
+}
+
+@media screen and (max-width: 1151px) {
+	.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) {
+		width: calc(100% - 210px);
+	}
+	.boxCommonTwo > table > tbody > tr > td:last-of-type {
+		width: 110px;
+	}
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form > input.new {
+		margin: 10px 0 0;
+	}
+	/*  メニューを追加して予約　のHTMLのコメント解除したら使用OK
+	.boxCommonTwo > table > tbody > tr > td:last-of-type > form > input:last-of-type {
+		display: none;
+	}
+	*/
+}
+@media screen and (max-width: 750px) {
+	.boxCommonTwo > table > tbody > tr > th {
+		font-size: 1.6rem;
+		line-height: 50px;
+		height: 50px;
+	}
+	.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) {
+		width: calc(100% - 180px);
+	}
+	.boxCommonTwo > table > tbody > tr > td:first-of-type {
+		width: 70px;
+	}
+	.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) > p > span:last-of-type {
+		padding-top: 10px;
+	}
+}
+@media screen and (max-width: 590px) {
+	.boxCommonTwo > table > tbody > tr > td {
+		font-size: 1.4rem;
+	}
+	.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) > p > span:last-of-type {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (max-width: 450px) {
+	.boxCommonTwo > table > tbody > tr > td:nth-of-type(2) {
+		width: calc(100% - 140px);
+	}
+	.boxCommonTwo > table > tbody > tr > td:first-of-type {
+		width: 50px;
+	}
+	.boxCommonTwo > table > tbody > tr > td:last-of-type {
+		width: 90px;
+	}
+}

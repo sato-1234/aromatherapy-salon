@@ -1,0 +1,4 @@
+*
+!.gitignore
+!reservation_historys.log
+!reservation_mail.log

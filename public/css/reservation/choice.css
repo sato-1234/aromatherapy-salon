@@ -1,0 +1,325 @@
+@charset "utf-8";
+/*	------------------------------------------------
+予約ページの追加メニュー（/reservation/choice）
+------------------------------------------------	*/
+.reservationNowAll {
+	background: #f4f0ec;
+}
+
+.reservationNow {
+	width: 995px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 60px 0 0;
+}
+
+.reservationNow > .messBox {
+	padding: 0 0 30px;
+	text-align: center;
+	color: #f6c;
+	font-weight: bold;
+}
+
+.reservationNow > h2 {
+	color: #655;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+.reservationNow > h2::before{
+	display: block;
+	content: "※戻る場合「選択のやり直し」ボタンを使用してください。";
+	padding-bottom: 30px;
+	font-size: 1.6rem;
+	line-height: 1.7;
+	color: #f6c;
+	font-weight: bold;
+}
+
+.reservationNow > ul > li {
+	margin-top: 30px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.reservationNow > ul > li > span {
+	margin-right: 15px;
+}
+.reservationNow > ul > li > span:first-of-type {
+	display: block;
+	color: #98605e;
+	font-size: 1.8rem;
+	line-height: 1.7;
+	padding: 0 0 10px;
+	margin-right: 0;
+}
+.reservationNow ul li > span > span {
+	color: #98605e;
+}
+
+.reservationNow > h3 {
+	color: #655;
+	font-size: 1.8rem;
+	font-weight: bold;
+	padding: 60px 0 20px;
+}
+.reservationNow > p.reservationChoiceP {
+	font-size: 1.4rem;
+	line-height: 1.7;
+	color: #98605e;
+	padding-bottom: 15px;
+}
+.reservationNow > p.dateP {
+	padding: 20px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.reservationNow > p.dateP > label {
+	display: inline-block;
+	height: 100%;
+	margin-right: 20px;
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+.reservationNow > p.dateP > br{
+	display: none;
+}
+
+.reservationNow > p.dateP > label > input {
+	width: 193px;
+	height: 60px;
+	line-height: 60px;
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #000;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.js-ios .reservationNow > p.dateP > label > input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.reservationNow > p.dateP > span.error {
+	padding: 15px 0 0;
+	line-height: 1.7;
+	display: block;
+	color: #f6c;
+}
+
+.divForm {
+	padding: 60px 0 0;
+	text-align: center;
+}
+.divForm input[type="number"] {
+	display: none;
+}
+.divForm > a,
+.divFormTwo > div > a {
+	width: 200px;
+	height: 60px;
+	margin-right: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	border-bottom: 2px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #fff;
+}
+.divForm > input[type="submit"],
+.divFormTwo > div > input[type="submit"] {
+	cursor: pointer;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	border-bottom: 2px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #fff;
+}
+@media screen and (min-width: 768px) {
+	.divForm > .js-hoverCss,
+	.divFormTwo > div > .js-hoverCss {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.divForm > .js-hoverCss:hover,
+	.divFormTwo > div > .js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+
+.divFormTwo > table {
+	width: 100%;
+}
+.divFormTwo > table > tbody > tr > th {
+	font-size: 22px;
+	color: #fff;
+	background: #58330d;
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+}
+.divFormTwo > table > tbody > tr > td {
+	border: 1px solid #ddd;
+	border-top: none;
+	background: #fff;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+
+.divFormTwo > table > tbody > tr > td > label {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	cursor: pointer;
+}
+.divFormTwo > table > tbody > tr > td > label > input {
+	float: left;
+	width: 30px;
+	margin: 3px 0;
+}
+.divFormTwo > table > tbody > tr > td > label > span:first-of-type {
+	float: left;
+}
+.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(2),
+.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(3) {
+	float: right;
+	text-align: right;
+	padding-left: 30px;
+}
+.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(2) {
+	width: 80px;
+}
+.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(3) {
+	width: 60px;
+}
+
+.divFormTwo > div {
+	padding: 60px 0 100px;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.divFormTwo > table.js-hoverCss > tbody > tr > td > label:hover {
+		opacity: 0.7;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.reservationNow {
+		width: auto;
+		padding: 100px 40px 0;
+	}
+	.divFormTwo > div {
+		padding: 60px 0;
+	}
+}
+@media screen and (max-width: 950px) {
+	.divFormTwo > table > tbody > tr > td > label {
+		position: relative;
+	}
+	.divFormTwo > table > tbody > tr > td > label > input {
+		float: none;
+		position: absolute;
+		margin: 0;
+		width: auto;
+		top: 27px;
+		left: 20px;
+		float: none;
+	}
+	.divFormTwo > table > tbody > tr > td > label > span:first-of-type {
+		float: none;
+		box-sizing: border-box;
+		padding: 0 0 10px 20px;
+		width: 100%;
+		line-height: 1.7;
+	}
+	.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(2),
+	.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(3) {
+		float: none;
+		box-sizing: border-box;
+		width: auto;
+		text-align: left;
+		padding: 0;
+	}
+	.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(2) {
+		padding: 0 20px;
+	}
+}
+@media screen and (max-width: 750px) {
+	.reservationNow {
+		padding: 100px 20px 0;
+	}
+	.reservationNow ul > li > span {
+		font-size: 1.4rem;
+	}
+	.reservationNow > ul > li > span:first-of-type {
+		font-size: 1.6rem;
+	}
+	.reservationNow > ul > li > span:last-of-type {
+		margin: 0;
+	}
+	.divFormTwo > table > tbody > tr > th {
+		font-size: 1.6rem;
+		line-height: 50px;
+		height: 50px;
+	}
+	.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(2),
+	.divFormTwo > table > tbody > tr > td > label > span:nth-of-type(3) {
+		font-size: 1.4rem;
+		color: #98605e;
+	}
+	.addMenuH3 {
+		line-height: 1.7;
+	}
+}
+@media screen and (max-width: 590px) {
+	.reservationNow > p.dateP {
+		padding: 0 0 20px 0;
+		border-top: none;
+		text-align: center;
+	}
+	.reservationNow > p.dateP > label {
+		margin: 0;
+	}
+	.reservationNow > p.dateP > br{
+		display: inline-block;
+	}
+	.reservationNow > p.dateP > label:first-of-type > span {
+		display: none;
+	}
+	.reservationNow > p.dateP > label:last-of-type {
+		margin-top: 20px;
+	}
+	.divForm {
+		display: none;
+	}
+	.divFormTwo > div {
+		padding: 50px 0;
+	}
+	.divFormTwo > div > a {
+		display: block;
+		margin: 0 auto 50px;
+	}
+}
+@media screen and (max-width: 359px) {
+	.reservationNow > ul > li > span {
+		display: block;
+	}
+	.reservationNow > ul > li > span:nth-of-type(2) {
+		padding-bottom: 10px;
+		margin: 0;
+	}
+}

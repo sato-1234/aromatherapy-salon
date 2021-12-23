@@ -1,0 +1,333 @@
+@charset "utf-8";
+/*	------------------------------------------------
+全体共通1920以上
+------------------------------------------------	*/
+@media screen and (min-width: 1921px) {
+	.contents {
+		width: 1920px;
+		margin: 0 auto;
+		position: relative;
+	}
+}
+@media screen and (max-width: 1020px) {
+	.contents {
+		width: 1020px;
+	}
+}
+@media screen and (max-width: 590px) {
+	.contents {
+		width: auto;
+	}
+}
+
+/*	------------------------------------------------
+head用(管理画面)
+------------------------------------------------	*/
+.adminHeader > h1 {
+	position: relative;
+	float: left;
+	width: 250px;
+	height: 94px;
+	box-sizing: border-box;
+	font-weight: bold;
+	color: #fff;
+	background: #357ca5;
+}
+.adminHeader >h1 > a {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 90%;
+	text-align: center;
+	line-height: 1.7;
+	color: #fff;
+}
+
+.adminHeader > div {
+	float: right;
+	width: calc(100% - 250px);
+	height: 94px;
+	box-sizing: border-box;
+	line-height: 94px;
+	background: #3c8dbc;
+}
+.adminHeader > div > span {
+	display: none;
+}
+.adminHeader > div > nav > span {
+	float: right;
+	color: #fff;
+}
+.adminHeader > div > nav > a {
+	float: right;
+	color: #fff;
+	margin: 0 20px;
+}
+.adminHeader > div > nav > a::before {
+	content: "\f2f5";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+#js-button,
+.navUlAdmin {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.adminHeader > h1 > a.js-hoverCss,
+	.adminHeader > div > nav > a.js-hoverCss {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+	.adminHeader > h1 > a.js-hoverCss:hover,
+	.adminHeader > div > nav > a.js-hoverCss:hover {
+		color: #ccc;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.adminHeader {
+		background: #3c8dbc;
+		position: relative;
+		overflow: hidden;
+	}
+	.adminHeader > h1 {
+		width: auto;
+		float: none;
+		height: 60px;
+		padding-left: 20px;
+		background: #3c8dbc;
+	}
+	.adminHeader > h1 > a{
+		position: static;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		width: auto;
+		height: 100%;
+		line-height: 60px;
+		text-align: left;
+	}
+	/*	nav	*/
+
+	#js-button {
+		position: absolute;
+		z-index: 98;
+		display: inline-block;
+		cursor: pointer;
+		top: 0;
+		right: 0;
+		width: 60px;
+		height: 60px;
+	}
+	#js-button > span,
+	#js-button::before,
+	#js-button::after {
+		position: absolute;
+		top: 50%;
+		left: 21px; /* Safari用 */
+		transform: translateY(-50%);
+		width: 18px;
+		height: 3px;
+		border-radius: 3px;
+		background: #fff;
+	}
+	#js-button::before {
+		top: calc(50% - 6px);
+		display: inline-block;
+		content: "";
+	}
+	#js-button::after {
+		top: calc(50% + 6px);
+		display: inline-block;
+		content: "";
+	}
+
+	.adminHeader > div {
+		position: fixed;
+		z-index: 99;
+		top: 0;
+		right: 0;
+		float: none;
+		width: 250px;
+		height: 100vh;
+		background: #000;
+		line-height: 1;
+		transform: translate(400px);
+		transition: transform 0.5s;
+	}
+	.adminHeader > div.js-navOpen {
+		transform: translate(0);
+	}
+	.adminHeader > div > span {
+		display: inline-block;
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		right: 0;
+		width: 60px;
+		height: 60px;
+	}
+	.adminHeader > div > span::before,
+	.adminHeader > div > span::after {
+		display: inline-block;
+		content: "";
+		background: #fff;
+		width: 40px;
+		height: 3px;
+		position: absolute;
+		top: 15px;
+	}
+	.adminHeader > div > span::before {
+		transform-origin: top left;
+		transform: rotate(45deg);
+		left: 16px;
+	}
+	.adminHeader > div > span::after {
+		transform-origin: top right;
+		transform: rotate(-45deg);
+		right: 16px;
+	}
+	.adminHeader > div > nav > span {
+		float: none;
+		display: none;
+	}
+	.adminHeader > div > nav > a {
+		float: none;
+		margin: 0;
+		font-size: 1.3rem;
+		height: 57px;
+		line-height: 57px;
+		padding: 0 20px;
+	}
+
+	.navUlAdmin {
+		display: block;
+	}
+	.navUlAdmin > li > a {
+		color: #fff;
+		font-size: 1.3rem;
+		height: 57px;
+		line-height: 57px;
+		padding: 0 20px;
+	}
+}
+
+.adminLeft {
+	position: absolute;
+	z-index: 2;
+	top: 94px;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background: #1a2226;
+}
+.adminLeft > h2 {
+	background: #000;
+	color: #fff;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+}
+
+.adminLeft > ul > li {
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+}
+.adminLeft > ul > li > a {
+	color: #ccc;
+}
+.adminLeft > ul > li > a:hover {
+	opacity: 0.8;
+}
+
+.adminRight {
+	position: relative;
+	z-index: 1;
+	padding: 0 0 0 250px;
+	width: calc(100% - 250px);
+	background: #1a2226;
+}
+.adminRight > section {
+	padding: 0 20px 60px;
+	background: #ecf0f5;
+}
+.adminRightDiv {
+	padding: 20px 0 0;
+	text-align: right;
+}
+.adminRightDiv > a {
+	padding-bottom: 2px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: #28acd6;
+	text-decoration: underline;
+}
+.adminRightDiv > a:hover {
+	opacity: 0.8;
+}
+.adminRight > section > h2 {
+	line-height: 60px;
+	height: 60px;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+.adminRight > section > span {
+	line-height: 1.7;
+	padding-bottom: 20px;
+	font-weight: bold;
+	color: #c39;
+}
+
+@media screen and (max-width: 590px) {
+	.adminLeft {
+		display: none;
+	}
+	.adminRight {
+		position: static;
+		padding: 0;
+		width: auto;
+		background: #ecf0f5;
+	}
+	.adminRightDiv {
+		padding: 20px 0;
+	}
+	.adminRightDiv > a {
+		font-size: 1.6rem;
+	}
+	.adminRight > section > h2 {
+		font-size: 1.6rem;
+	}
+}
+
+
+/*	------------------------------------------------
+footer用(管理画面)
+------------------------------------------------	*/
+.adminfooter {
+	background: #1a2226;
+	padding-left: 250px;
+}
+.adminfooter > p {
+	height: 41px;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 1.2rem;
+	border-top: 1px solid #ddd;
+	line-height: 40px;
+	background: #fff;
+}
+
+@media screen and (max-width: 590px) {
+	.adminfooter {
+		background: #3c8dbc;
+		padding: 0 10px;
+	}
+	.adminfooter > p {
+		color: #fff;
+		background: transparent;
+	}
+}

@@ -1,0 +1,367 @@
+@charset "utf-8";
+/*	------------------------------------------------
+予約ページのユーザー情報入力ページ（　/reservation/user　）
+------------------------------------------------	*/
+.reservationNowAll{
+	background: #f4f0ec;
+}
+.reservationUser {
+	width: 995px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 60px 0 0;
+}
+
+.reservationUser > .messBox {
+	padding: 0 0 30px;
+	text-align: center;
+	color: #f6c;
+	font-weight: bold;
+}
+
+.reservationUser > h2 {
+	color: #655;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+.reservationUser > h2::before{
+	display: block;
+	content: "※戻る場合「選択のやり直し」ボタンを使用してください。";
+	padding-bottom: 30px;
+	font-size: 1.6rem;
+	line-height: 1.7;
+	color: #f6c;
+	font-weight: bold;
+}
+
+.reservationUser > ul > li {
+	margin-top: 30px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.reservationUser > ul > li > span {
+	margin-right: 15px;
+}
+.reservationUser > ul > li > span:first-of-type {
+	display: block;
+	color: #98605e;
+	font-size: 1.8rem;
+	line-height: 1.7;
+	padding: 0 0 10px;
+	margin-right: 0;
+}
+.reservationUser > ul > li > span > span {
+	color: #98605e;
+}
+.reservationUser > ul > li input {
+	display: none;
+}
+
+.reservationUserDiv {
+	text-align: right;
+	padding: 60px 0 100px;
+}
+.reservationUserDiv > span {
+	padding-bottom: 2px;
+	border-bottom: 1px solid #000;
+}
+.reservationUserDiv > span:first-of-type {
+	float: left;
+}
+.reservationUserDiv > span:last-of-type {
+	float: right;
+}
+.reservationUserDiv > span > span:nth-of-type(2) {
+	padding: 0 30px;
+}
+.reservationUserDiv > span > span:nth-of-type(2),
+.reservationUserDiv > span > span:nth-of-type(3) {
+	font-size: 3.8rem;
+	color: #593300;
+}
+.reservationUserDiv > input {
+	display: none;
+}
+
+.reservationUserh3 {
+	color: #655;
+	font-size: 1.8rem;
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.reservationUserForm > label {
+	width: 100%;
+	display: block;
+	border-top: 1px solid #ddd;
+	padding: 20px 0 20px 10px;
+}
+.reservationUserForm > label > span > .hissu {
+	color: #f6c;
+}
+.reservationUserForm > label > span:first-of-type {
+	float: left;
+	width: 30%;
+	box-sizing: border-box;
+	line-height: 60px;
+	height: 60px;
+	color: #000;
+}
+.reservationUserForm > label > span.error {
+	color: #f6c;
+	padding: 10px 0 0 30%;
+	line-height: 1.7;
+}
+
+.reservationUserForm > label > input {
+	float: right;
+	display: block;
+	width: 70%;
+	box-sizing: border-box;
+	padding: 0 20px;
+	line-height: 60px;
+	height: 60px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-weight: bold;
+	font-size: 1.8rem;
+	color: #000;
+}
+
+.reservationUserForm > .personP {
+	border-top: 1px solid #ddd;
+	padding: 20px 0 20px 10px;
+	line-height: 1.7;
+}
+.reservationUserForm > .personP > span:first-of-type {
+	float: left;
+	width: 30%;
+}
+.reservationUserForm > .personP > span:last-of-type {
+	float: right;
+	width: 70%;
+}
+.reservationUserForm > .personP > span:last-of-type > label {
+	display: inline-block;
+	margin-right: 15px;
+}
+.reservationUserForm > .personP > span:last-of-type > label > input {
+	margin-right: 3px;
+}
+
+.reservationUserForm > label > textarea {
+	float: right;
+	display: block;
+	width: 70%;
+	box-sizing: border-box;
+	height: 180px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-weight: bold;
+	font-size: 1.8rem;
+	color: #000;
+}
+.reservationUserForm > div {
+	border-top: 1px solid #ddd;
+	padding: 60px 0 100px;
+	text-align: center;
+}
+.reservationUserForm > div > a {
+	width: 200px;
+	height: 60px;
+	margin-right: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	border-bottom: 2px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #fff;
+}
+.reservationUserForm > div > input[type="submit"] {
+	cursor: pointer;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border: 1px solid #5b3401;
+	border-bottom: 2px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #fff;
+}
+.reservationUserForm > div > input[type="submit"].disabled {
+	cursor: default;
+	opacity: 0.7;
+}
+
+.reservationUserForm > label > input::-webkit-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::-moz-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input:-ms-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::-ms-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::-webkit-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::-moz-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input:-ms-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+.reservationUserForm > label > input::-ms-input-placeholder {
+	color: #ccc;
+	font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+	.reservationUserForm > div > .js-hoverCss {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.reservationUserForm > div > .js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.reservationUser {
+		width: auto;
+		padding: 114px 40px 0;
+	}
+	.reservationUser > ul > li > span {
+		margin-right: 0;
+	}
+	.reservationUser > ul > li > span:nth-of-type(2) {
+		margin-right: 20px;
+	}
+	.reservationUserDiv {
+		text-align: right;
+		padding: 60px 0;
+	}
+	.reservationUserForm > div {
+		padding: 60px 0;
+	}
+}
+@media screen and (max-width: 850px) {
+	.reservationUserDiv {
+		padding: 30px 0 60px;
+	}
+	.reservationUserDiv > span {
+		display: block;
+	}
+	.reservationUserDiv > span:first-of-type {
+		float: none;
+	}
+	.reservationUserDiv > span:last-of-type {
+		float: none;
+		padding-top: 30px;
+	}
+}
+@media screen and (max-width: 750px) {
+	.reservationUser {
+		padding: 114px 20px 0;
+	}
+	.reservationUser > ul > li > span {
+		font-size: 1.4rem;
+	}
+	.reservationUser > ul > li > span:first-of-type {
+		font-size: 1.6rem;
+	}
+	.reservationUserDiv > span > span:first-of-type {
+		font-size: 1.4rem;
+	}
+	.reservationUserDiv > span > span:nth-of-type(2) {
+		padding: 0 15px;
+	}
+	.reservationUserDiv > span > span:nth-of-type(2),
+	.reservationUserDiv > span > span:nth-of-type(3) {
+		font-size: 3.0rem;
+	}
+	.reservationUserForm > .personP {
+		padding: 20px 0;
+	}
+	.reservationUserForm > .personP > span:first-of-type {
+		float: none;
+		width: 100%;
+		padding-bottom: 10px;
+	}
+	.reservationUserForm > .personP > span:last-of-type {
+		float: none;
+		width: 100%;
+	}
+	.reservationUserForm > label {
+		padding: 20px 0;
+	}
+	.reservationUserForm > label > span:first-of-type {
+		float: none;
+		width: 100%;
+		line-height: 1;
+		padding-bottom: 10px;
+		height: auto;
+	}
+	.reservationUserForm > label > input {
+		float: none;
+		width: 100%;
+		padding: 0 10px;
+		line-height: 50px;
+		height: 50px;
+		font-size: 1.6rem;
+	}
+	.reservationUserForm > label > span.error {
+		padding: 10px 0 0 0;
+	}
+	.reservationUserForm > label > textarea {
+		float: none;
+		width: 100%;
+		font-size: 1.6rem;
+	}
+	.reservationUserForm > div {
+		padding: 50px 0;
+	}
+	.reservationUserForm > div > a {
+		margin: 0 auto 50px;
+		display: block;
+	}
+}
+@media screen and (max-width: 359px) {
+	.reservationUser > ul > li > span {
+		display: block;
+	}
+	.reservationUser > ul > li > span:nth-of-type(2) {
+		padding-bottom: 10px;
+		margin: 0;
+	}
+	.reservationUserDiv > span > span:nth-of-type(2) {
+		padding: 0 10px;
+	}
+	.reservationUserDiv > span > span:nth-of-type(2),
+	.reservationUserDiv > span > span:nth-of-type(3) {
+		font-size: 2.2rem;
+	}
+}

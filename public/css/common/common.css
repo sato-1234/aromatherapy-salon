@@ -1,0 +1,308 @@
+@charset "utf-8";
+/*	------------------------------------------------
+共通：初期用
+------------------------------------------------	*/
+
+/*	基盤	*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5基盤 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+	display: block;
+}
+html,
+body,
+div {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	vertical-align: bottom;
+}
+input[type="text"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none;
+	display: inline-block;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	background: none;
+	padding: 0;
+}
+
+
+/*	共通：初期独自用
+----------------------------------	*/
+.contents {
+	line-height: 1;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+	font-family: YuGothic, "Yu Gothic", "游ゴシック体", "游ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	font-size: 1.6em;
+	color: #000;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+	word-break: break-all;
+}
+span {
+	display: inline-block;
+}
+img {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+
+input,
+textarea {
+	display: inline-block;
+	background: none;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	color: #000;
+}
+input {
+	line-height: 1;
+}
+textarea {
+	line-height: 1.7;
+}
+legend {
+	display: inline-block;
+}
+
+/*	クリア共通	*/
+.clearF::after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+/*	Internet Explorer用の設定	*/
+a img {
+	border: none;
+}
+/* 全対応 */
+img.js-ObjectFitCover {
+	/* 通常対応 */
+	-o-object-fit: cover;
+	object-fit: cover;
+	/* IEやエッジ対応（JS必須） */
+	font-family: "object-fit: cover;";
+}
+
+/*  PCのとき電話リンクなしの設定  */
+@media screen and (min-width: 768px) {
+	a[href^="tel:"] {
+		pointer-events: none;
+	}
+}
+
+/*	------------------------------------------------
+全体共通：font対応
+------------------------------------------------	*/
+/*	アンドロイドゴシック対応	*/
+body.js-androidGothic {
+	font-family: "Noto Sans JP", sans-serif;
+}
+
+/*	ヒラギノ角ゴ	*/
+body .hiragino {
+	font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+}
+
+/*	明朝対応	*/
+.mintyo {
+	font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+
+/*	アンドロイド明朝対応	*/
+#body .js-androidMintyo {
+	font-family: "Noto Serif JP", serif;
+}
+
+/*	------------------------------------------------
+404ぺージ
+------------------------------------------------	*/
+.notFound {
+	background: #f4f0ec;
+	text-align: center;
+	padding: 60px 20px;
+}
+.notFound > h2 {
+	font-size: 2.2rem;
+	padding-bottom: 30px;
+}
+.notFound > p {
+	line-height: 1.7;
+	padding-bottom: 25px;
+}
+.notFound > a {
+	background: #fff;
+	width: 250px;
+	height: 60px;
+	line-height: 60px;
+	border: 1px solid #5b3401;
+	color: #5b3401;
+	font-size: 1.6rem;
+	box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+	.notFound > a.js-hoverCss {
+		transition-property: color, background-color;
+		transition-duration: 0.4s;
+	}
+	.notFound > a.js-hoverCss:hover {
+		color: #fff;
+		background-color: #58330c;
+	}
+}
+@media screen and (max-width: 1151px) {
+	.notFound {
+		padding: 114px 20px 50px;
+	}
+}
+@media screen and (max-width: 750px) {
+	.notFound > a {
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4rem;
+	}
+}
