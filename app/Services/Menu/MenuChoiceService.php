@@ -29,7 +29,7 @@ final class MenuChoiceService extends ReservationService
 	 * URLに応じた規定メニューを取得する
 	 * @return array
 	 */
-	public function getBasicMenu(string $url): array
+	public function getBasicMenu(string $url): ?array
 	{
 		$basicPosts = $this->reservationMenuRepository
 			->select('id','category','category_menu','time_required', 'title','body','price')
@@ -40,7 +40,7 @@ final class MenuChoiceService extends ReservationService
 			->orderBy('id', 'asc')
 			->get()->toArray();
 
-		return $basicPosts;
+		return empty($basicPosts) ? null : $basicPosts;
 	}
 
 	/**

@@ -59,6 +59,10 @@
 
 	</section>
 
+	@if ( is_null($firstMeuns) && is_null($reMenus) && is_null($categoryBasicMenus))
+	<p id="reservationForm" style="color:red; text-align:center; line-height:2;">予約MENUが登録されていません<br />シーダーなどで登録してください</p>
+	@endif
+
 	@if ( isset($firstMeuns) && isset($reMenus) )
 	<section id="reservationForm" class="boxCommon boxCommonOne">
 		<h3 class="mintyo"><span>Campaign</span><span>キャンペーンメニュー</span></h3>
@@ -80,7 +84,7 @@
 	</section>
 	@endif
 
-	@if ( !empty($categoryBasicMenus) )
+	@if ( isset($categoryBasicMenus) )
 	<section class="boxCommon boxCommonTwo">
 		<h3 class="mintyo"><span>Menu</span><span>基本メニュー</span></h3>
 

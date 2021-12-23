@@ -45,8 +45,12 @@ class MenuController extends Controller
 		}
 	}
 
-	private function conversion(array $basicMenus,array $categoryNames): array
+	private function conversion(?array $basicMenus,array $categoryNames): ?array
 	{
+		if(is_null($basicMenus)){
+			return null;
+		}
+
 		$categoryBasicMenus = [];
 		foreach($basicMenus as $post){
 			if ( in_array($post['category'],$categoryNames,true) ){
