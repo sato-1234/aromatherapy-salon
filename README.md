@@ -1,3 +1,62 @@
+# Reservation system for aromatherap
+アロマテラピーサロン向けのLaravelを使用した簡易予約システムになります。近日login機能によって予約メニューを操作する機能を追加致します。それまではシーダーなどをお使いください。<font color="Red">画像に関しては、フリー素材を使用しており販売利用目的などで使用できませんので、フリー素材のルールを守った上でご使用ください。</font>
+
+## environment
+* OS: CentOS7
+* PHP: 7.4.25
+* Composer: 2.1.14
+* Laravel: 6.20.41
+* MySQL(MariaDB): 5.5.65
+
+## Environment creation
+**1. '.env' creation**
+```bash
+git clone https://github.com/sato-1234/aromatherapy-salon.git
+cd aromatherapy-salon
+cp .env.example .env
+php artisan key:generate
+```
+**2. '.env' settings**
+* 「APP_URL」以外の「基本情報」、「DB情報」、「MAIL」設定はご自分の環境に合わせて設定してください。
+```bash
+# 例
+APP_URL=ブラウザで表示されるTOP表示URL
+```
+**3. '.env' Additional mail settings**
+* 以下は予約の際に使用します。ご自分の環境に合わせて設定してください。
+```bash
+# 例
+MAIL_ADMIN=[各メールアドレスに送信する管理メールアドレス]
+MAIL_TO=[問い合わせ受付の責任者メールアドレス]
+MAIL_CC=[問い合わせ受付のメールアドレス]
+MAIL_BCC=[問い合わせ受付のメールアドレス]
+```
+**4. '.env' Additional view settings**
+* 以下はviewで表示可能です。ご自分の環境に合わせて設定してください。
+```bash
+# 例
+INFO_TEL=090-XXXX-XXXX
+INFO_MAIL=XXXX@test.com
+INFO_HOTPEPPER=https://beauty.hotpepper.jp
+INFO_INSTA=https://www.instagram.com
+INFO_TWI=https://twitter.com
+INFO_FACE=https://www.facebook.com
+INFO_PIN=https://www.pinterest.jp
+INFO_LINE=https://line.me
+```
+**5. composer**
+```bash
+composer install
+```
+**6. migration**
+* あらかじめMySQLでデータベースをご用意してください。
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+***
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
