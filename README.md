@@ -1,12 +1,12 @@
 # Reservation system for aromatherap
-アロマテラピーサロン向けのLaravelを使用した簡易予約システムになります。近日login機能によって予約メニューを操作する機能を追加致します。それまではシーダーなどをお使いください。<font color="Red">画像に関しては、フリー素材を使用しており販売利用目的などで使用できませんので、フリー素材のルールを守った上でご使用ください。</font>
+アロマテラピーサロン向けのLaravelを使用した簡易予約システムになります。近日login機能によって予約メニューを操作する機能を追加致します。それまではシーダーなどをお使いください。画像に関しては、フリー素材を使用しており販売利用目的などで使用できませんので、フリー素材のルールを守った上でご使用ください。
 
 ## environment
-* OS: CentOS7
+* OS: macOS Catalina v10.15.7
 * PHP: 7.4.25
 * Composer: 2.1.14
 * Laravel: 6.20.41
-* MySQL(MariaDB): 5.5.65
+* MySQL: 5.7.30
 
 ## Environment creation
 **1. '.env' creation**
