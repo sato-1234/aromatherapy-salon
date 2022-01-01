@@ -124,11 +124,25 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 
 
+				/* 2重送信対策
+				---------------------------------------------------------	*/
+				if(document.getElementById('submitComplete')){
+						const formID = document.getElementById('submitComplete');
+						const submit = document.querySelector('#submitComplete input[type="submit"]');
+						formID.addEventListener('submit', function(){
+								submit.disabled = true;
+								submit.classList.add('disabled');
+								submit.classList.remove('js-hoverCss');
+								submit.value = '送信中･･･';
+						}, false);
+				}
+
+
 				/*	ブラウザがIEとエッジのときでもCSS「object-fit: cover;」（自動トリミング）適用させる
 				---------------------------------------------------------	*/
-				// if ( document.querySelector('.js-ObjectFitCover') ) {
-				// 		objectFitImages('.js-ObjectFitCover');
-				// }
+				if ( document.querySelector('.js-ObjectFitCover') ) {
+						objectFitImages('.js-ObjectFitCover');
+				}
 
 		// }
 });

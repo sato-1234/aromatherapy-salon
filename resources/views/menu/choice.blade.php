@@ -27,7 +27,7 @@
 	<div class="aromaBox">
 		<div class="aromaBox2">
 
-			@include('menu/include/' . $url)
+			@include('menu/includes/' . $url)
 
 			@component('menu.components.menu')
 				@slot('titleEn',$menu[1])

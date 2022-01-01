@@ -23,7 +23,7 @@ class CreateReservationMenusTable extends Migration
             $table->string('body',92)->nullable()->comment('メニュー詳細');
             $table->integer('price')->unsigned()->comment('料金');
             $table->integer('time_required')->unsigned()->comment('所要時間（分単位）');
-            $table->string('img',255)->default('no_image.png')->comment('キャンペーン用画像');
+            $table->string('img',255)->nullable()->default('no_image.png')->comment('キャンペーン用画像');
             $table->date('expiration_date')->nullable()->comment('キャンペーン用有効期限');
             $table->integer('order_num')->unsigned()->default(1)->comment('表示順の操作（数値4桁までの並べ順）');
             $table->boolean('display')->default(1)->comment('表示フラグ');

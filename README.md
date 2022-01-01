@@ -54,6 +54,10 @@ composer install
 php artisan migrate
 php artisan db:seed
 ```
+**7. storage**
+```bash
+php artisan storage:link
+```
 
 ***
 

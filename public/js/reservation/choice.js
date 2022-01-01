@@ -9,24 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		// const url = new URL(location.href);
 		// if( url.origin === "https://ドメイン" && url.protocol.match(/^https?:/) ) {
 
-				/*	予約ページの地図表示
-				---------------------------------------------------------	*/
-				// if ( document.getElementById('js-parkingOpen') ) {
-
-				// 		let parkingOpen = document.getElementById('js-parkingOpen');
-				// 		let parkingClose = document.getElementById('js-parkingClose');
-				// 		let parkingBox = document.getElementById('js-parkingBox');
-
-				// 		parkingOpen.addEventListener('click',function(e){
-				// 				parkingBox.classList.add('js-parkingOpen');
-				// 				e.stopPropagation();
-				// 		});
-				// 		parkingClose.addEventListener('click',function(e){
-				// 				parkingBox.classList.remove('js-parkingOpen');
-				// 				e.stopPropagation();
-				// 		});
-				// }
-
 				/*	予約ページの日時時間カスタマイズ
 				---------------------------------------------------------	*/
 				if( document.getElementById('js-calendar') ){

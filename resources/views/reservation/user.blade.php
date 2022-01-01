@@ -79,7 +79,3 @@
 	</form>
 </div>
 @endsection
-
-@section('footer_script')
-<script src="{{ asset('js/reservation/user.js') }}"></script>
-@endsection

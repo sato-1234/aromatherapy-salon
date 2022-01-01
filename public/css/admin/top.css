@@ -1,0 +1,691 @@
+@charset "utf-8";
+/*	------------------------------------------------
+head用(管理画面)
+------------------------------------------------	*/
+#logout-form {
+	display: none;
+}
+
+.success {
+	position: fixed;
+	top: 50%;
+	width: 100%;
+	text-align: center; /* Safari用 */
+	transform: translateY(-50%);
+}
+.success > span {
+	color: #fff;
+	padding: 20px;
+	background: #999;
+}
+
+#js-success {
+	-webkit-animation-name: fade-out;
+	animation-name: fade-out;
+	-webkit-animation-duration: 4s;
+	animation-duration: 4s;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	animation-direction: normal;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@-webkit-keyframes fade-out {
+	0% {
+		opacity: 1;
+		z-index: 101;
+	}
+	100% {
+		opacity: 0;
+		z-index: -1;
+	}
+}
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+		z-index: 101;
+	}
+	100% {
+		opacity: 0;
+		z-index: -1;
+	}
+}
+
+/*	------------------------------------------------
+作成メニュー確認ページ　top(管理画面)
+------------------------------------------------	*/
+.menuList {
+	border: 1px solid #ddd;
+	border-top: 5px solid #28acd6;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border-radius: 2px;
+	background: #fff;
+	margin-bottom: 40px;
+	position: relative;
+}
+.menuList:last-of-type {
+	margin-bottom: 0;
+}
+.menuList > p {
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+.menuList > form {
+	position: absolute;
+	top: 6px;
+	right: 10px;
+}
+.menuList > form > input[name="orderUpdate"] {
+	display: none;
+}
+.menuList > form > input[type="submit"] {
+	height: 28px;
+	line-height: 28px;
+	padding: 0 15px;
+	background: #28acd6;
+	border-radius: 5px;;
+	color: #fff;
+	cursor: pointer;
+}
+.menuList > form > input[type="submit"]:hover {
+	opacity: 0.8;
+}
+
+.menuList > ul > li {
+	padding: 20px;
+	border-top: 1px solid #eee;
+	background-color: #fff;
+}
+.menuList > ul > li:first-of-type {
+	border-top: none;
+}
+
+.menuList > ul > li.sort {
+	display: flex;
+	-webkit-box-orient: horizontal; /* 水平or垂直 */ /* 順番 */
+	flex-wrap: nowrap;
+}
+.sortImg {
+	width: 108px;
+	height: 90px;
+}
+.sortDiv {
+	width: calc(100% - 123px);
+	padding-left: 15px;
+}
+
+.menuList > ul > li h3 {
+	padding: 12px 0;
+	font-size: 1.6rem;
+	font-weight: bold;
+	line-height: 1.7;
+}
+.menuList > ul > li div > span{
+	color:#666;
+}
+.menuList > ul > li div > span:nth-of-type(2){
+	padding:0 15px;
+}
+.menuList > ul > li div > form:first-of-type {
+	float: left;
+}
+.menuList > ul > li div > form:last-of-type {
+	float: right;
+}
+.menuList > ul > li div > form input {
+	cursor: pointer;
+	color: #28acd6;
+	text-decoration: underline;
+	font-size: 1.6rem;
+	padding-bottom: 2px;
+}
+.menuList > ul > li div > form input:hover {
+	opacity: 0.8;
+}
+
+.menuListPrice {
+	padding-right: 20px;
+}
+
+@media screen and (max-width: 590px) {
+	.menuList > p {
+		border-bottom: none;
+	}
+	.menuList > form {
+		padding: 10px 0 20px;
+		border-bottom: 1px solid #ccc;
+		position: static;
+		top: auto;
+		right: auto;
+		text-align: center;
+	}
+	.menuList > form > input[type="submit"] {
+		height: 30px;
+		line-height: 30px;
+	}
+
+	.menuList > ul > li > span {
+		font-size: 1.4rem;
+	}
+	.menuList > ul > li h3 {
+		padding: 15px 0;
+	}
+
+	.menuList > ul > li.sort {
+		display: block;
+	}
+	.sortImg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.sortDiv {
+		width: 100%;
+		padding: 15px 0 0;
+	}
+	.menuList > ul > li div > span{
+		display: block;
+	}
+	.menuList > ul > li div > span:nth-of-type(1){
+		padding:10px 0 0;
+	}
+	.menuList > ul > li div > span:nth-of-type(2){
+		padding:15px 0 ;
+	}
+}
+
+/*	------------------------------------------------
+メニュ作成ページ　create(管理画面)
+------------------------------------------------	*/
+
+.imgListBox {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 90%;
+	padding: 5vh 5%;
+	height: 90vh;
+	background: rgba(0,0,0,0.8);
+}
+div.js-imgListOpen {
+	display: block;
+}
+
+.imgListBox > div {
+	position: relative;
+}
+.imgListBox > div > span {
+	cursor: pointer;
+	position: absolute;
+	z-index: 101;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+}
+
+.imgListBox > div > span::before,
+.imgListBox > div > span::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	width: 40px;
+	height: 3px;
+	background: #000;
+}
+
+.imgListBox > div > span::before {
+	left: 7px;
+	transform-origin: top left;
+	transform: rotate(45deg);
+}
+.imgListBox > div > span::after {
+	right: 7px;
+	transform-origin: top right;
+	transform: rotate(-45deg);
+}
+
+.imgListBox > div {
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background-color: #fff;
+	padding: 0 20px 0;
+	height: 90vh;
+	overflow-y: scroll;
+}
+.imgListBox > div > ul::before {
+	content: "画像クリックで画像URLコピー";
+	display: block;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	text-align: center;
+	color: #c39;
+}
+.imgListBox > div > ul > li {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 150px;
+	padding: 0 5px 20px;
+	overflow: hidden;
+}
+.imgListBox > div > ul > li > span.category{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 5px;
+	background-color: yellow;
+}
+.imgListBox > div > ul > li > img {
+	height: 150px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 100%;
+	box-shadow: 0 0 4px rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+/* @media screen and (min-width: 768px) {
+	.imgListBox > div > ul.js-hoverCss > li > img {
+		transition-property: opacity;
+		transition-duration: 0.4s;
+	}
+	.imgListBox > div > ul.js-hoverCss > li > img:hover {
+		opacity: 0.8;
+	}
+} */
+@media screen and (max-width: 800px) {
+	.imgListBox > div {
+		overflow-x: scroll;
+	}
+	.imgListBox > div > ul {
+		width: 840px;
+	}
+	.imgListBox > div > span {
+		z-index: 101;
+		top: 10px;
+		right: auto;
+		left: 10px;
+	}
+
+	.imgListBox > div > ul::before {
+		text-align: left;
+		padding-left: 50px;
+	}
+}
+@media screen and (max-width: 359px) {
+	.imgListBox > div > ul::before {
+		font-size: 1.3rem;
+	}
+}
+
+.createCampaign {
+	border: 1px solid #ddd;
+	padding: 20px 10px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border-radius: 2px;
+	background: #fff;
+}
+
+.dbError {
+	line-height: 2;
+	color: red;
+	padding-bottom: 20px;
+}
+
+.createCampaign > p {
+	padding-bottom: 30px;
+}
+.createCampaign > p > span:first-of-type {
+	font-weight: bold;
+}
+.createCampaign > p > span:first-of-type span.colors {
+	color: #28acd6;
+	cursor: pointer;
+}
+.createCampaign > p > span:first-of-type span.colors:hover {
+	opacity: 0.8;
+}
+.createCampaign > p > span.error {
+	display: block;
+	line-height: 1.7;
+	padding: 5px 0 0;
+	color: #f6c;
+}
+
+
+.createCampaignP1 > label {
+	display: inline-block;
+	margin-left: 20px;
+}
+.createCampaignP2 > span:first-of-type,
+.createCampaignP20 > span:first-of-type {
+	padding-bottom: 10px;
+}
+.createCampaignP2 > input,
+.createCampaignP20 > input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 40px;
+	height: 40px;
+	padding: 0 10px;
+	border: 1px solid #000;
+}
+
+.createCampaignP3 > span {
+	padding-bottom: 10px;
+	display: block;
+}
+.createCampaignP3 > label {
+	display: inline-block;
+	margin-right: 10px;
+}
+.createCampaignPP {
+	margin-top: 10px;
+}
+
+.createCampaignP4 > input {
+	line-height: 40px;
+	height: 40px;
+	border: 1px solid #000;
+	width: 100px;
+	margin-right: 10px;
+	text-align: center;
+}
+.createCampaignP5 > input {
+	line-height: 40px;
+	height: 40px;
+	border: 1px solid #000;
+	width: 150px;
+	margin-left: 10px;
+	text-align: center;
+}
+.createCampaignP6 > textarea {
+	margin-top: 10px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #000;
+	padding: 10px;
+}
+.createCampaignP7 > span {
+	line-height: 1.7;
+	display: block;
+	margin-bottom: 5px;
+}
+.createCampaignP7 > input {
+	line-height: 40px;
+	height: 40px;
+	border: 1px solid #000;
+	width: 100px;
+	text-align: center;
+}
+
+.createCampaignSubmit {
+	cursor: pointer;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background: #28acd6;
+	border-radius: 2px;
+}
+.createCampaignSubmit:hover {
+	opacity: 0.8;
+}
+@media screen and (max-width: 590px) {
+	.createCampaignP1 > span:first-of-type {
+		display: block;
+		padding-bottom: 10px;
+	}
+	.createCampaignP1 > label {
+		margin: 0 20px 0 0;
+	}
+	.createCampaignP2 > span:first-of-type > span,
+	.createCampaignP20 > span:first-of-type > span {
+		display: block;
+		padding-top: 10px;
+	}
+	.createCampaignP3 > br {
+		display: none;
+	}
+	.createCampaignP3 > span {
+		padding-bottom: 0;
+	}
+	.createCampaignP3 > label {
+		display: inline-block;
+		margin-top: 10px;
+	}
+	.createCampaignP6 > textarea {
+		height: 150px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.createCampaignP2 > span:first-of-type > span {
+		font-size: 1.4rem;
+		line-height: 1.7;
+	}
+	.createCampaignP4 > span {
+		display: block;
+		padding-bottom: 10px;
+	}
+}
+
+
+/*	------------------------------------------------
+画像管理（予約）　upload(管理画面)
+------------------------------------------------	*/
+.reservationUp {
+	padding: 20px 0;
+}
+.reservationUp > p {
+	text-align: center;
+}
+.reservationUp > p > span {
+	line-height: 2;
+	display: block;
+	color: #c39;
+	padding-bottom: 25px;
+}
+.reservationUp > p > span:nth-of-type(2) > a {
+	color: #28acd6;
+	padding-bottom: 2px;
+	text-decoration: underline;
+}
+.reservationUp > p > span:nth-of-type(2) > a:hover {
+	opacity: 0.8;
+}
+.reservationUp > p > input {
+	cursor: pointer;
+}
+
+.reservationUp > input {
+	cursor: pointer;
+	text-align: center;
+	display: block;
+	margin: 30px auto 0;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background: #28acd6;
+	border-radius: 2px;
+}
+.reservationUp > input:hover {
+	opacity: 0.8;
+}
+.reservationUp > div.error {
+	padding-top: 15px;
+	text-align: center;
+	color: red;
+	line-height: 1.7;
+}
+.colorClick > span {
+	color: #c39;
+}
+.imgList {
+	overflow-y: scroll;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border-radius: 2px;
+	background: #fff;
+}
+.imgList > ul {
+	padding: 20px 10px 0;
+}
+.imgList > ul > li {
+	float: left;
+	width: 200px;
+	padding: 0 5px;
+}
+.imgList > ul > li.imgNo {
+	padding-bottom: 20px;
+}
+.imgList > ul > li > form {
+	text-align: center;
+	padding: 0 0 20px;
+	position: relative;
+}
+.imgList > ul > li > form > span.category{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 5px;
+	font-size: 1.2rem;
+	background-color: yellow;
+}
+.imgList > ul > li > form > img {
+	display: block;
+	height: 150px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 100%;
+	cursor: pointer;
+}
+.imgList > ul > li > form > input[type="text"] {
+	display: none;
+}
+.imgList > ul > li > form > input[type="submit"] {
+	color: #28acd6;
+	font-size: 1.6rem;
+	cursor: pointer;
+	padding-bottom: 2px;
+	margin-top: 10px;
+	text-decoration: underline;
+}
+.imgList > ul > li > form > input[type="submit"]:hover {
+	opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+	.imgList > ul > li > form > img.js-hoverCss {
+		transition-property: opacity;
+		transition-duration: 0.4s;
+	}
+	.imgList > ul > li > form > img.js-hoverCss:hover {
+		opacity: 0.8;
+	}
+}
+@media screen and (max-width: 1170px) {
+	.imgList {
+		overflow-x: scroll;
+	}
+	.imgList > ul {
+		width: 840px;
+	}
+}
+@media screen and (max-width: 590px) {
+	.reservationUp > p > span {
+		font-size: 1.4rem;
+	}
+	.adminRight > section > h2.colorClick {
+		line-height: 1;
+		height: auto;
+	}
+	.colorClick > span {
+		padding: 10px 0;
+		display: block;
+	}
+}
+
+/*	------------------------------------------------
+スタッフ入力ページ　staff(管理画面)
+------------------------------------------------	*/
+
+/* .adminRightStaff {
+	border: 1px solid #ddd;
+	padding: 0 10px 20px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border-radius: 2px;
+	background: #fff;
+	margin-bottom: 30px;
+}
+.adminRightStaff > li {
+	padding-top: 20px;
+	width: 30%;
+	float: left;
+}
+.adminRightStaff > li:nth-of-type(3n + 2) {
+	margin: 0 5%;
+}
+.adminRightStaff > li > span {
+	float: left;
+	padding-right: 20px;
+}
+.adminRightStaff > li > form {
+	float: left;
+}
+.adminRightStaff > li > form input {
+	color: #28acd6;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 590px) {
+	.adminRightStaff > li {
+		width: 47.5%;
+	}
+	.adminRightStaff > li:nth-of-type(3n + 2) {
+		margin: 0;
+	}
+	.adminRightStaff > li:nth-of-type(odd) {
+		margin: 0 2.5% 0 0;
+	}
+	.adminRightStaff > li:nth-of-type(even) {
+		margin: 0 0 0 2.5%;
+	}
+}
+@media screen and (max-width: 450px) {
+	.adminRightStaff > li {
+		width: 100%;
+		line-height: 1.7;
+	}
+	.adminRightStaff > li:nth-of-type(odd) {
+		margin: 0;
+	}
+	.adminRightStaff > li:nth-of-type(even) {
+		margin: 0;
+	}
+} */

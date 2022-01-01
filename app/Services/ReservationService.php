@@ -4,8 +4,8 @@ namespace App\Services;
 
 use App\Models\ReservationMenu;
 
-abstract class ReservationService{
-
+abstract class ReservationService
+{
 	protected ReservationMenu $reservationMenuRepository;
 	protected const CATEGORY = [
 		'ボディトリートメント',
@@ -30,6 +30,23 @@ abstract class ReservationService{
 		return self::CATEGORY;
 	}
 
+	/**
+	 * 単体id存在確認
+	 * @return bool
+	 */
+	public function checkId(int $id): bool
+	{
+		return $this->reservationMenuRepository->where('id', $id)->exists();
+	}
 
+	/**
+	 * 複数id存在確認
+	 * @return bool
+	 */
+	public function checkIds(array $ids): bool
+	{
+		$ids = array_map('intval', $ids);
+		return $this->reservationMenuRepository->whereIn('id', $ids)->exists();
+	}
 
 }
