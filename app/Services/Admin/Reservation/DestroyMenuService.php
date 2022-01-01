@@ -62,4 +62,5 @@ final class DestroyMenuService extends ReservationService
 			}
 		}
 	}
+
 }

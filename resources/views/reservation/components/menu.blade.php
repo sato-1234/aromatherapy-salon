@@ -1,7 +1,7 @@
 <ul>
 @foreach ($posts as $post)
 <li class="clearF">
-	<img class="js-ObjectFitCover" src="{{ asset('storage/reservation_set/' . $post['img']) }}" alt="{{ $post['title'] }}">
+	<img class="js-ObjectFitCover" src="{{ asset('storage/img/reservation_set/' . $post['img']) }}" alt="{{ $post['title'] }}">
 	<div>
 		<h4>{{ $post['title'] }}</h4>
 		<p>

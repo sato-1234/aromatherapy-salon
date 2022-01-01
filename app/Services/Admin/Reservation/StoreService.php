@@ -36,21 +36,35 @@ final class StoreService extends ReservationService
 
 		// キャンペーンかつデフォルト画像以外
 		if( $content['coupon'] === 1 && $content['img'] !== 'no_image.png'){
-			$photo = Photo::select('id','type')
-				->where('url', $content['img'])
-				->first()->toArray();
 
-			$type = $content['type'] === 0 ? '新規' : '全員';
-			$post = Photo::find($photo['id']);
+			// 初キャンペーンカウント
+			$firstCount = $this->reservationMenuRepository
+				->where('img',$content['img'])
+				->where('type',0)
+				->where('coupon',1)
+				->count();
 
-			if( is_null($photo['type']) ){
-				$post->type = $type;
+			// 全員キャンペーンカウント
+			$reCount = $this->reservationMenuRepository
+				->where('img',$content['img'])
+				->where('type',1)
+				->where('coupon',1)
+				->count();
+
+			if($firstCount === 0 && $reCount === 0){
+				Photo::where('url',$content['img'])->update(['type' => null]);
 			}
-			elseif( $photo['type'] !== $type ){
-				$post->type = '新規,全員';
+			if($firstCount >= 1 && $reCount === 0){
+				Photo::where('url',$content['img'])->update(['type' => '新規']);
 			}
-			$post->save();
+			if($firstCount === 0 && $reCount >= 1){
+				Photo::where('url',$content['img'])->update(['type' => '全員']);
+			}
+			if($firstCount >= 1 && $reCount >= 1){
+				Photo::where('url',$content['img'])->update(['type' => '新規,全員']);
+			}
 		}
+
 	}
 
 }

@@ -600,7 +600,7 @@ div.js-imgListOpen {
 	opacity: 0.8;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
 	.imgList > ul > li > form > img.js-hoverCss {
 		transition-property: opacity;
 		transition-duration: 0.4s;
@@ -608,7 +608,7 @@ div.js-imgListOpen {
 	.imgList > ul > li > form > img.js-hoverCss:hover {
 		opacity: 0.8;
 	}
-}
+} */
 @media screen and (max-width: 1170px) {
 	.imgList {
 		overflow-x: scroll;
