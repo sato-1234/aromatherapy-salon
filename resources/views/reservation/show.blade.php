@@ -1,8 +1,7 @@
 @extends('layouts.common_show')
 
 @section('analytics')
-@component('components.analytics')
-@endcomponent
+@include('includes/head_analytics')
 @endsection
 
 @section('head_meta')

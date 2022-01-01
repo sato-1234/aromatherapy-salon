@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!<br />
+                    <a style="margin-top:10px; display:inline-block;" href="{{ route('admin.top') }}">管理画面に移動する</a>
                 </div>
             </div>
         </div>

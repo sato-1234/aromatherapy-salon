@@ -23,6 +23,9 @@ if ( $status_code ) {
         case 404:
             $message = '存在しないページです';
             break;
+        case 405:
+            $message = 'Not Allowed';
+            break;
         case 408:
             $message = 'タイムアウトです';
             break;

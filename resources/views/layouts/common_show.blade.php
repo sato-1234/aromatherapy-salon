@@ -4,24 +4,18 @@
 	<!-- アナリティクス設定 -->
 	@yield('analytics')
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="email=no,telephone=no,address=no" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<!-- 必須設定 -->
+	@include('includes/head_meta_required')
 
 	<!-- noindex title description canonical ogp -->
 	@yield('head_meta')
 
 	<!-- Fonts icon -->
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700,900%7CNoto+Serif+JP:400,500,600,700,900&amp;display=swap&amp;subset=japanese" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	@include('includes/head_fonts_icon')
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- <script src="{{ asset('js/common/ofi.min.js') }}"></script> -->
+	<script src="{{ asset('js/common/ofi.min.js') }}"></script>
 	@yield('head_script')
 
 	<!-- Styles	-->
@@ -30,10 +24,7 @@
 	@yield('head_css')
 
 	<!-- ファビコン必要な場合、正方形の700pxから作成推奨、種類3個	-->
-	<link rel="icon" type="image/x-icon" href="{{ asset('favicons/favicon.ico') }}" />
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicons/apple-touch-icon.png') }}" />
-	<meta name="msapplication-TileColor" content="#faa500" />
-	<meta name="msapplication-TileImage" content="{{ asset('favicons/site-tile-150x150.png') }}" />
+	@include('includes/head_favicon')
 
 </head>
 <body id="body">
