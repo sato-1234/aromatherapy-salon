@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\Reservation\MenuRequest;
 use App\Http\Requests\Reservation\UserRequest;
+
+use App\Services\CommonService;
 use App\Services\Reservation\ReservationShowService;
 use App\Services\Reservation\ReservationChoiceViewService;
 use App\Services\Reservation\ReservationAddPostService;
 use App\Services\Reservation\ReservationUserViewService;
 use App\Services\Reservation\ReservationUserPostService;
+
 use App\Mail\SendReservationMail;
 use Mail;
 
@@ -32,7 +36,7 @@ class ReservationController extends Controller
 
 		$basicMenus = $menus->getBasicMenu();
 		$categoryNames = $menus->getCategory();
-		$categoryBasicMenus = $this->conversion($basicMenus,$categoryNames);
+		$categoryBasicMenus = CommonService::conversion($basicMenus,$categoryNames);
 
 		return view('reservation.show',compact('firstMeuns','reMenus','categoryBasicMenus'));
 	}
@@ -68,7 +72,7 @@ class ReservationController extends Controller
 			$choiceMenu = $menus->getIdMenu($id);
 			$basicMenus = $menus->getBasicMenu($id);
 			$categoryNames = $menus->getCategory();
-			$categoryBasicMenus = $this->conversion($basicMenus,$categoryNames);
+			$categoryBasicMenus = CommonService::conversion($basicMenus,$categoryNames);
 
 			session()->flash('id', $id);
 			//「選択のやり直しoid値対応」
@@ -216,9 +220,9 @@ class ReservationController extends Controller
 	}
 
 
-	// ------------------------------------------------ //
+	// -------- 以下プライベート関数 -------- //
 	/**
-	 * private用 共通関数(以下)
+	 * セッション削除
 	 */
 	private function DeleteSession(array $names): void
 	{
@@ -229,6 +233,9 @@ class ReservationController extends Controller
 		}
 	}
 
+	/**
+	 * セッション確認
+	 */
 	private function confirmSession(array $names): bool
 	{
 		foreach( $names as $name){
@@ -239,6 +246,9 @@ class ReservationController extends Controller
 		return true;
 	}
 
+	/**
+	 * セッションセット
+	 */
 	private function setSession(array $names, string $type = 'flash'): void
 	{
 		if($type === 'flash'){
@@ -263,21 +273,9 @@ class ReservationController extends Controller
 		}
 	}
 
-	private function conversion(?array $basicMenus,array $categoryNames): ?array
-	{
-		if(is_null($basicMenus)){
-			return null;
-		}
-
-		$categoryBasicMenus = [];
-		foreach($basicMenus as $post){
-			if ( in_array($post['category'],$categoryNames,true) ){
-				$categoryBasicMenus[$post['category']][] = $post;
-			}
-		}
-		return $categoryBasicMenus;
-	}
-
+	/**
+	 * メール送信結果のログ
+	 */
 	private function mailLog(array $mails,string $type): bool
 	{
 		if ( empty($mails) ) {

@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace App\Services\Reservation;
 
+use App\Services\ReservationService;
+
 final class ReservationAddPostService extends ReservationService{
 
 	private const DAY = 1440;//分

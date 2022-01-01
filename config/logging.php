@@ -112,6 +112,18 @@ return [
             'path' => storage_path('logs/reservation_historys.log'),
             'level' => 'debug',
         ],
+
+        'reservation_menus' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/reservation_menus.log'),
+            'level' => 'debug',
+        ],
+
+        'photos' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/photos.log'),
+            'level' => 'debug',
+        ],
     ],
 
 ];

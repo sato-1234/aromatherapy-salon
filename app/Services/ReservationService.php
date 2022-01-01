@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace App\Services\Reservation;
+namespace App\Services;
 
 use App\Models\ReservationMenu;
 
@@ -29,5 +29,7 @@ abstract class ReservationService{
 	{
 		return self::CATEGORY;
 	}
+
+
 
 }

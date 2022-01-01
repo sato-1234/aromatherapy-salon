@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace App\Services\Reservation;
 
+use App\Services\ReservationService;
+
 final class ReservationChoiceViewService extends ReservationService{
 
 	/**

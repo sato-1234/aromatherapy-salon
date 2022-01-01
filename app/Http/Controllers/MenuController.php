@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use App\Exceptions\NotFoundException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Services\CommonService;
 use App\Services\Menu\MenuShowService;
 use App\Services\Menu\MenuChoiceService;
 
@@ -33,7 +34,7 @@ class MenuController extends Controller
 
 				$basicMenus = $menus->getBasicMenu($url);
 				$categoryNames = $menus->getCategory();
-				$categoryBasicMenus = $this->conversion($basicMenus,$categoryNames);
+				$categoryBasicMenus = CommonService::conversion($basicMenus,$categoryNames);
 
 				$footerMenu = $menus->getFooterMenu();
 				return view('menu.choice', compact('menu','url','categoryBasicMenus','footerMenu'));
@@ -43,21 +44,6 @@ class MenuController extends Controller
 		} catch (NotFoundException $e) {
 			throw new NotFoundHttpException();
 		}
-	}
-
-	private function conversion(?array $basicMenus,array $categoryNames): ?array
-	{
-		if(is_null($basicMenus)){
-			return null;
-		}
-
-		$categoryBasicMenus = [];
-		foreach($basicMenus as $post){
-			if ( in_array($post['category'],$categoryNames,true) ){
-				$categoryBasicMenus[$post['category']][] = $post;
-			}
-		}
-		return $categoryBasicMenus;
 	}
 
 }

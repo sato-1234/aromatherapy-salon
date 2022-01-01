@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace App\Services\Menu;
 
-use App\Services\Reservation\ReservationService;
+use App\Services\ReservationService;
 
 final class MenuChoiceService extends ReservationService
 {

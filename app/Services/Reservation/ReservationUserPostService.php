@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Services\Reservation;
 
+use App\Services\ReservationService;
 use App\Models\ReservationHistory;
 
 final class ReservationUserPostService extends ReservationService{
@@ -21,7 +22,7 @@ final class ReservationUserPostService extends ReservationService{
 
 	/**
 	 * オーダーMENUとお客様情報保存
-	 * @return bool
+	 * @return void
 	 */
 	public function storeHistory($content): void
 	{

@@ -2,8 +2,10 @@
 declare(strict_types=1);
 namespace App\Services\Reservation;
 
-final class ReservationUserViewService extends ReservationService{
+use App\Services\ReservationService;
 
+final class ReservationUserViewService extends ReservationService
+{
 	private const INPUT_VIEW = [
 		'お名前' => ['type' => 'text', 'name' => 'name', 'placeholder' => '例）山田太郎'],
 		'フリガナ' => ['type' => 'text', 'name' => 'hurigana', 'placeholder' => '例）ヤマダタロウ'],
