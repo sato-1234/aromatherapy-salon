@@ -1,5 +1,5 @@
 # Reservation system for aromatherap
-アロマテラピーサロン向けのLaravelを使用した簡易予約システムになります。近日login機能によって予約メニューを操作する機能を追加致します。それまではシーダーなどをお使いください。画像に関しては、フリー素材を使用しており販売利用目的などで使用できませんので、フリー素材のルールを守った上でご使用ください。
+アロマテラピーサロン向けのLaravelを使用した簡易予約システムになります。予約メニューは、ログインユーザー登録後かつログイン後に予約メニューを追加編集が可能です。シーダーでも登録は可能です。画像に関しては、フリー素材を使用しており販売利用目的などで使用できませんので、フリー素材のルールを守った上でご使用ください。
 
 ## Verification environment
 * OS: macOS Catalina v10.15.7
@@ -57,6 +57,13 @@ php artisan db:seed
 **7. storage**
 ```bash
 php artisan storage:link
+```
+**8. login**
+* 'APP_URL/login'にアクセスして'Register'からユーザー登録。
+* ログイン後、'APP_URL/admin'にアクセスで管理画面に移動できます。
+* 'Register'登録を禁止する場合は、'web.php'を以下に変更↓↓
+```bash
+Auth::routes(['register' => false,]);
 ```
 
 ***
