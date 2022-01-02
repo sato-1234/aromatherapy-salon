@@ -13,6 +13,9 @@
 ```bash
 git clone https://github.com/sato-1234/aromatherapy-salon.git
 cd aromatherapy-salon
+
+composer install
+
 cp .env.example .env
 php artisan key:generate
 ```
@@ -44,21 +47,17 @@ INFO_FACE=https://www.facebook.com
 INFO_PIN=https://www.pinterest.jp
 INFO_LINE=https://line.me
 ```
-**5. composer**
-```bash
-composer install
-```
-**6. migration**
+**5. migration**
 * あらかじめMySQLでデータベースをご用意してください。
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
-**7. storage**
+**6. storage**
 ```bash
 php artisan storage:link
 ```
-**8. login**
+**7. login**
 * 'APP_URL/login'にアクセスして'Register'からユーザー登録。
 * ログイン後、'APP_URL/admin'にアクセスで管理画面に移動できます。
 * 'Register'登録を禁止する場合は、'web.php'を以下に変更↓↓
