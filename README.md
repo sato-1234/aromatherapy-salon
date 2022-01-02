@@ -3,7 +3,7 @@
 
 ## Verification environment
 * OS: macOS Catalina v10.15.7
-* PHP: 7.4.22
+* PHP: 7.4.26
 * Composer: 2.1.14
 * Laravel: 6.20.41
 * MySQL: 5.7.30
